@@ -1,14 +1,15 @@
 <script context="module">
 	import { csvParse } from 'd3-dsv';
 	import { csv_data } from './CsvData.svelte';
-	
-	export const stat_labels = 
-				["hp", "atk", "def", "int", "skl", "will", "ref", "fort", 
-				 "agility", "dexterity", "strength", "endurance", "squirm",
-				 "biotech", "history", "people", "places", "engineering",
-				 "computers", "medical", "peopleReading", "deceive", 
-				 "manipulate", "sooth", "command", "persuade", "entertain",
-				 "perception", "survival", "research", "craft", "zeroG"];
+
+	export const primaries1 = ["hp", "atk", "def", "init"];
+	export const primaries2 = ["skl", "will", "ref", "fort"];
+	export const physicals = ["Agility", "Dexterity", "Strength", "Zero-G", "Stealth", "Endurance", "Squirm"];
+	export const socials = ["Soothe", "Entertain", "Deceive", "Manipulate", "Persuade", "Command", "People reading"];
+	export const knowledges = ["Biotech", "History", "People", "Places", "Engineering", "Computers", "Medical"];
+	export const practicals = ["Perception", "Survival", "Research", "Craft", "Piloting"];
+
+	export const all_labels = primaries1.concat(primaries2).concat(physicals).concat(socials).concat(knowledges).concat(practicals);
 	
 	let input_data = csvParse(csv_data);
 	export let races = new Map();
@@ -18,8 +19,8 @@
 		constructor(raw_data) {
 			this.title = raw_data.title;
 			this.type = raw_data.type;
-			for (let stat of stat_labels) {
-				this[stat] = parseInt(raw_data[stat]);
+			for (let label of all_labels) {
+				this[label] = parseInt(raw_data[label]);
 			}
 			
 			this.specials = [];

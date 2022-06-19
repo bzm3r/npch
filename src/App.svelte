@@ -1,6 +1,5 @@
 <script>
-	import { class_titles, race_titles } from './CharacterData.svelte';
-  import CharacterSummary from './CharacterSummary.svelte';
+	import CharacterSummary from './CharacterSummary.svelte';
 	import InputBoxTable from './InputBoxTable.svelte';
 	
 	let race = "";
@@ -13,3 +12,4 @@
 
 <CharacterSummary {race} {class1} {class2} {class3}>
 </CharacterSummary>
+

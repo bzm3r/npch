@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.2"
+   width="14.459984mm"
+   height="14.46mm"
+   viewBox="0 0 1445.9984 1446"
+   preserveAspectRatio="xMidYMid"
+   fill-rule="evenodd"
+   stroke-width="28.222"
+   stroke-linejoin="round"
+   xml:space="preserve"
+   id="svg21"
+   sodipodi:docname="fort.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs25" /><sodipodi:namedview
+   id="namedview23"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:document-units="mm"
+   showgrid="false"
+   fit-margin-top="0"
+   fit-margin-left="0"
+   fit-margin-right="0"
+   fit-margin-bottom="0"
+   inkscape:zoom="0.68087123"
+   inkscape:cx="353.22391"
+   inkscape:cy="475.86091"
+   inkscape:window-width="2560"
+   inkscape:window-height="1400"
+   inkscape:window-x="-12"
+   inkscape:window-y="-12"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg21" />
+ <g
+   visibility="visible"
+   id="MasterSlide_1_Default"
+   transform="translate(-1449.0008,-1349)">
+  <desc
+   id="desc2">Master slide
+  </desc>
+  <rect
+   fill="none"
+   stroke="none"
+   x="0"
+   y="0"
+   width="21590"
+   height="27940"
+   id="rect4" />
+ </g>
+ <g
+   visibility="visible"
+   id="Slide_1_page1"
+   transform="translate(-1449.0008,-1349)">
+  <g
+   id="DrawingGroup_1">
+   <g
+   id="g12">
+    <path
+   fill="#ffffff"
+   stroke="none"
+   d="m 1678,2628 h 988 L 2515,1535 h -687 z"
+   id="path7" />
+    <path
+   fill="none"
+   stroke="#000000"
+   id="Drawing_1_0"
+   stroke-width="100"
+   stroke-linejoin="round"
+   d="m 1678,2628 h 988 L 2515,1535 h -687 z" />
+    <rect
+   fill="none"
+   stroke="none"
+   x="1678"
+   y="1536"
+   width="989"
+   height="1094"
+   id="rect10" />
+   </g>
+   <g
+   id="g17">
+    <path
+   fill="none"
+   stroke="#000000"
+   id="Drawing_2_0"
+   stroke-width="100"
+   stroke-linejoin="round"
+   d="M 1499,2745 H 2845 L 2639,1399 h -935 z" />
+    <rect
+   fill="none"
+   stroke="none"
+   x="1499"
+   y="1400"
+   width="1347"
+   height="1347"
+   id="rect15" />
+   </g>
+  </g>
+ </g>
+</svg>

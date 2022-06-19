@@ -1,5 +1,5 @@
 <script context="module">
-	export let csv_data = String.raw`title,type,hp,atk,def,int,skl,will,ref,fort,agility,dexterity,strength,piloting,stealth,endurance,squirm,biotech,history,people,places,engineering,computers,medical,peopleReading,decieve,manipulate,sooth,command,persuade,entertain,perception,survival,research,craft,zeroG,special0,special1,special2
+	export let csv_data = String.raw`title,type,hp,atk,def,init,skl,will,ref,fort,Agility,Dexterity,Strength,Piloting,Stealth,Endurance,Squirm,Biotech,History,People,Places,Engineering,Computers,Medical,People reading,Deceive,Manipulate,Soothe,Command,Persuade,Entertain,Perception,Survival,Research,Craft,Zero-G,special0,special1,special2
 Archon,race,25,0,0,-2,1,2,-1,2,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,Robotic,Immune to fear,IronHeart
 Fae,race,19,0,1,2,3,-1,2,1,2,2,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,3,2,0,0,2,0,+3 in two social checks,
 Half-Fae,race,20,0,0,1,3,0,2,0,2,2,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,+5 vs disease,Dabbler

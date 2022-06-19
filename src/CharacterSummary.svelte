@@ -1,5 +1,7 @@
 <script>
-	import { stat_labels, races, classes } from './CharacterData.svelte';
+	import { primaries1, primaries2, physicals, socials, knowledges, practicals, all_labels, races, classes } from './CharacterData.svelte';
+	import IconText from './IconText.svelte';
+	import SecondaryTables from './SecondaryTables.svelte';
 	
 	export let race = "";
 	export let class1 = "";
@@ -13,7 +15,6 @@
 	
 	let titles = [];
 	let totals = new Map();
-	stat_labels.forEach(stat => totals.set(stat, 0));
 	let specials = [];
 	
 	function updateTitles(r_dat, c1_dat, c2_dat, c3_dat) {
@@ -31,19 +32,19 @@
 	}
 	
 	function updateTotals(r_dat, c1_dat, c2_dat, c3_dat) {
-		for (const stat of stat_labels) {
-			totals[stat] = 0;
+		for (const label of all_labels) {
+			totals[label] = 0;
 			if (r_dat != null) {
-				totals[stat] += r_dat[stat];
+				totals[label] += r_dat[label];
 			}
 			if (c1_dat != null) {
-				totals[stat] += c1_dat[stat];
+				totals[label] += c1_dat[label];
 			}
 			if (c2_dat != null) {
-				totals[stat] += c2_dat[stat];
+				totals[label] += c2_dat[label];
 			}
 			if (c3_dat != null) {
-				totals[stat] += c3_dat[stat];
+				totals[label] += c3_dat[label];
 			}
 		}
 	}
@@ -78,13 +79,23 @@
 </p>
 
 <table>
-	{#each stat_labels as stat}
 	<tr>
-		<th>{stat}</th>
-		<td>{totals[stat]}</td>
+		{#each primaries1 as primary}
+		<td>
+			<IconText icon={primary} text={totals[primary]}></IconText>
+		</td>
+		{/each}
 	</tr>
-	{/each}
+	<tr>
+		{#each primaries2 as primary}
+		<td>
+			<IconText icon={primary} text={totals[primary]}></IconText>
+		</td>
+		{/each}
+	</tr>
 </table>
+
+<SecondaryTables {totals}></SecondaryTables>
 
 <p>
 	Specials:
@@ -93,6 +104,4 @@
 		{#each specials as special}
 				<li>{special}</li>
 		{/each}
-</ul> 
-
-
+</ul>

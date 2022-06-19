@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.2"
+   width="12.689989mm"
+   height="12.689989mm"
+   viewBox="0 0 1268.9989 1268.9989"
+   preserveAspectRatio="xMidYMid"
+   fill-rule="evenodd"
+   stroke-width="28.222"
+   stroke-linejoin="round"
+   xml:space="preserve"
+   id="svg13"
+   sodipodi:docname="atk.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs17" /><sodipodi:namedview
+   id="namedview15"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:document-units="mm"
+   showgrid="false"
+   fit-margin-top="0"
+   fit-margin-left="0"
+   fit-margin-right="0"
+   fit-margin-bottom="0"
+   inkscape:zoom="0.68087123"
+   inkscape:cx="353.22391"
+   inkscape:cy="475.86091"
+   inkscape:window-width="2560"
+   inkscape:window-height="1400"
+   inkscape:window-x="-12"
+   inkscape:window-y="-12"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg13" />
+ <g
+   visibility="visible"
+   id="MasterSlide_1_Default"
+   transform="translate(-1450.0005,-1350.0005)">
+  <desc
+   id="desc2">Master slide
+  </desc>
+  <rect
+   fill="none"
+   stroke="none"
+   x="0"
+   y="0"
+   width="21590"
+   height="27940"
+   id="rect4" />
+ </g>
+ <g
+   visibility="visible"
+   id="Slide_1_page1"
+   transform="translate(-1450.0005,-1350.0005)">
+  <g
+   id="g10">
+   <path
+   fill="#ffffff"
+   stroke="none"
+   d="m 2147,2342 h -125 v 227 c -281,-28 -494,-241 -522,-522 h 227 v -125 h -227 c 28,-281 241,-494 522,-522 v 227 h 125 v -227 c 281,28 494,241 522,522 h -227 v 125 h 227 c -28,281 -241,494 -522,522 z"
+   id="path7" />
+   <path
+   fill="none"
+   stroke="#000000"
+   id="Drawing_1_0"
+   stroke-width="100"
+   stroke-linejoin="round"
+   d="m 2147,2342 h -125 v 227 c -281,-28 -494,-241 -522,-522 h 227 v -125 h -227 c 28,-281 241,-494 522,-522 v 227 h 125 v -227 c 281,28 494,241 522,522 h -227 v 125 h 227 c -28,281 -241,494 -522,522 z" />
+  </g>
+ </g>
+</svg>
