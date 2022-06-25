@@ -1,6 +1,6 @@
 <script>
     export let totals;
-    export let labels;
+    export let labels = [];
 </script>
 
 <table>

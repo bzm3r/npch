@@ -5,7 +5,7 @@
 </script>
 
 <div class="icon">
-    <img class="iconImage" {src} alt={icon}>
+    <img class="iconImage" {src} alt={icon} title={icon}>
     <div class="iconText">{text}</div>
 </div>
 

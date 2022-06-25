@@ -1,7 +1,10 @@
 <script>
-	import { primaries1, primaries2, physicals, socials, knowledges, practicals, all_labels, races, classes } from './CharacterData.svelte';
-	import IconText from './IconText.svelte';
-	import SecondaryTables from './SecondaryTables.svelte';
+	import { primaries1, primaries2, all_labels, races, classes } from './CharacterData.svelte';
+	import Primaries from './Primaries.svelte';
+	import Secondaries from './Secondaries.svelte';
+	import Specials from './Specials.svelte';
+	import Tabs from './Tabs.svelte';
+	import Tab from './Tab.svelte';
 	
 	export let race = "";
 	export let class1 = "";
@@ -48,6 +51,12 @@
 			}
 		}
 	}
+
+	let tabs = [
+		{id: 0, title: "Primaries", component: Primaries, inputs: { totals: totals }},
+		{id: 1, title: "Secondaries", component: Secondaries, inputs: { totals: totals }},
+		{id: 2, title: "Specials", component: Specials, inputs: { specials: specials }},
+	];
 	
 	$: if (race != "") {
 		r_dat = races.get(race);
@@ -69,39 +78,25 @@
 	} else {
 		c2_dat = null;
 	}
+
 	$: updateTitles(r_dat, c1_dat, c2_dat, c3_dat);
 	$: updateSpecials(r_dat, c1_dat, c2_dat, c3_dat);
 	$: updateTotals(r_dat, c1_dat, c2_dat, c3_dat);
+	$: tabs = [
+		{id: 0, title: "Primaries", component: Primaries, inputs: { totals: totals }},
+		{id: 1, title: "Secondaries", component: Secondaries, inputs: { totals: totals }},
+		{id: 2, title: "Specials", component: Specials, inputs: { specials: specials }},
+	];
 </script>
 
 <p>
 	{titles.join(" + ")}
 </p>
 
-<table>
-	<tr>
-		{#each primaries1 as primary}
-		<td>
-			<IconText icon={primary} text={totals[primary]}></IconText>
-		</td>
-		{/each}
-	</tr>
-	<tr>
-		{#each primaries2 as primary}
-		<td>
-			<IconText icon={primary} text={totals[primary]}></IconText>
-		</td>
-		{/each}
-	</tr>
-</table>
-
-<SecondaryTables {totals}></SecondaryTables>
-
-<p>
-	Specials:
-</p>
-<ul>
-		{#each specials as special}
-				<li>{special}</li>
-		{/each}
-</ul>
+<Tabs>
+	{#each tabs as {id, title, component, inputs}}
+		<Tab id={id} title={title}>
+			<svelte:component this={component} {...inputs} />
+		</Tab>
+	{/each}
+</Tabs>
