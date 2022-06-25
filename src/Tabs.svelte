@@ -41,10 +41,12 @@
 	}
 
 	function swipeTab() {
-		if (startX < endX) {
-			incrementSelectedTab()
-		} else if (startX > endX) {
-			decrementSelectedTab()
+		if (Math.abs(startX - endX) > 100) {
+			if (startX < endX) {
+				incrementSelectedTab()
+			} else if (startX > endX) {
+				decrementSelectedTab()
+			}
 		}
 	}
 	
