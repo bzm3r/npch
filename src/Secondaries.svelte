@@ -22,6 +22,21 @@
 <style>
     .container {
         display: grid;
-        grid-auto-flow: column;
+        grid-template-columns: max-content max-content;
+        grid-template-rows: max-content max-content;
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+    .physicals {
+        justify-self: center;
+    }
+    .socials {
+        justify-self: center;
+    }
+    .knowledges {
+        justify-self: center;
+    }
+    .practicals {
+        justify-self: center;
     }
 </style>

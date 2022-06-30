@@ -20,3 +20,9 @@
 		</select>
 	</td>
 </tr>
+
+<style>
+	tr {
+		outline: dotted;
+	}
+</style>

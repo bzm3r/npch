@@ -17,3 +17,9 @@
 	<SelectBox bind:selected={class2} title="Class 2" name="c2-select" choices={selectable_classes}></SelectBox>
 	<SelectBox bind:selected={class3} title="Class 3" name="c3-select" choices={selectable_classes}></SelectBox>
 </table>
+
+<style>
+	table {
+		outline: solid;
+	}
+</style>

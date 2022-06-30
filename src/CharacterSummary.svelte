@@ -1,7 +1,8 @@
 <script>
-	import { primaries1, primaries2, all_labels, races, classes } from './CharacterData.svelte';
+	import { all_labels, races, classes } from './CharacterData.svelte';
 	import Primaries from './Primaries.svelte';
 	import Secondaries from './Secondaries.svelte';
+	import Equipment from './Equipment.svelte';
 	import Specials from './Specials.svelte';
 	import Tabs from './Tabs.svelte';
 	import Tab from './Tab.svelte';
@@ -56,6 +57,7 @@
 		{id: 0, title: "Primaries", component: Primaries, inputs: { totals: totals }},
 		{id: 1, title: "Secondaries", component: Secondaries, inputs: { totals: totals }},
 		{id: 2, title: "Specials", component: Specials, inputs: { specials: specials }},
+		{id: 3, title: "Equipment", component: Equipment, inputs: {}},
 	];
 	
 	$: if (race != "") {
@@ -86,6 +88,7 @@
 		{id: 0, title: "Primaries", component: Primaries, inputs: { totals: totals }},
 		{id: 1, title: "Secondaries", component: Secondaries, inputs: { totals: totals }},
 		{id: 2, title: "Specials", component: Specials, inputs: { specials: specials }},
+		{id: 3, title: "Equipment", component: Equipment, inputs: {}},
 	];
 </script>
 

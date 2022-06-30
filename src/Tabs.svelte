@@ -61,7 +61,7 @@
 
 </script>
 
-<div>
+<div class="buttons">
 	{#each tabs as {id, title}}
 		<button class:active={$selectedTab === id} on:click={selectTab(id)}>
 			{title}
@@ -69,7 +69,7 @@
 	{/each}
 </div>
 
-<div on:touchstart={onTouchStart} on:touchend={onTouchEnd}>
+<div class="content" on:touchstart={onTouchStart} on:touchend={onTouchEnd}>
 	<slot/>
 </div>
 
@@ -77,5 +77,13 @@
 	button.active {
 		background: black;
 		color: white;
+	}
+
+	.buttons {
+		outline: dashed;
+	}
+
+	.content {
+		outline: dashed;
 	}
 </style>

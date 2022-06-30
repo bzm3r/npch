@@ -12,4 +12,3 @@
 
 <CharacterSummary {race} {class1} {class2} {class3}>
 </CharacterSummary>
-

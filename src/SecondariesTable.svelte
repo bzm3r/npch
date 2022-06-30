@@ -13,8 +13,17 @@
 </table>
 
 <style>
+    table {
+        width: 140px;
+        outline-style: solid;
+    }
+
     tr:nth-of-type(odd) {
-    background-color:#ccc;
-  }
+        background-color:#ccc;
+    }
+
+    td {
+        text-align: center;
+    }
 </style>
 
