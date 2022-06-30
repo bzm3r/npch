@@ -2,11 +2,21 @@
     export let text = "";
     export let icon = "";
     let src = "/assets/" + icon + ".svg";
+    let iconY = {
+        atk: 65,
+        def: 60,
+        fort: 60,
+        hp: 65,
+        init: 80,
+        ref: 60,
+        skl: 60,
+        will: 60,
+    }
 </script>
 
 <div class="icon">
     <img class="iconImage" {src} alt={icon} title={icon}>
-    <div class="iconText">{text}</div>
+    <div class="iconText" style:--y="-{iconY[icon]}%">{text}</div>
 </div>
 
 <style>
@@ -24,8 +34,9 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -60%);
+    transform: translate(-50%, var(--y));
     z-index: 1;
+    font-weight: bold;
     }
 </style>
 

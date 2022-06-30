@@ -89,10 +89,6 @@
 	];
 </script>
 
-<p>
-	{titles.join(" + ")}
-</p>
-
 <Tabs>
 	{#each tabs as {id, title, component, inputs}}
 		<Tab id={id} title={title}>
