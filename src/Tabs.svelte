@@ -78,12 +78,4 @@
 		background: black;
 		color: white;
 	}
-
-	.buttons {
-		outline: dashed;
-	}
-
-	.content {
-		outline: dashed;
-	}
 </style>

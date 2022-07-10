@@ -5,19 +5,28 @@
     export let totals;
 </script>
 
-<table>
-	<tr>
-		{#each primaries1 as primary}
-		<td>
-			<IconText icon={primary} text={totals[primary]}></IconText>
-		</td>
-		{/each}
-	</tr>
-	<tr>
-		{#each primaries2 as primary}
-		<td>
-			<IconText icon={primary} text={totals[primary]}></IconText>
-		</td>
-		{/each}
-	</tr>
-</table>
+<div class="container">
+	<table>
+		<tr>
+			{#each primaries1 as primary}
+			<td>
+				<IconText icon={primary} text={totals[primary]}></IconText>
+			</td>
+			{/each}
+		</tr>
+		<tr>
+			{#each primaries2 as primary}
+			<td>
+				<IconText icon={primary} text={totals[primary]}></IconText>
+			</td>
+			{/each}
+		</tr>
+	</table>
+</div>
+
+<style>
+	.container {
+		display: flex;
+		justify-content: center;
+	}
+</style>

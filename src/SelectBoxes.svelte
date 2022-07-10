@@ -19,7 +19,4 @@
 </table>
 
 <style>
-	table {
-		outline: solid;
-	}
 </style>

@@ -25,5 +25,13 @@
     td {
         text-align: center;
     }
+
+    th {
+        width: 90%;
+    }
+
+    tr {
+        width: 10%;
+    }
 </style>
 

@@ -22,7 +22,7 @@
 </tr>
 
 <style>
-	tr {
-		outline: dotted;
+	select {
+		width: 200px;
 	}
 </style>
