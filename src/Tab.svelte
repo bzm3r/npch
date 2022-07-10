@@ -17,5 +17,14 @@
 </script>
 
 {#if $selectedTab === id}
+<div class="container">
 	<slot/>
+</div>
 {/if}
+
+<style>
+	.container {
+		display: flex;
+		justify-content: center;
+	}
+</style>

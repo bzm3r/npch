@@ -74,6 +74,11 @@
 </div>
 
 <style>
+	.buttons {
+		display: flex;
+		justify-content: center;
+	}
+	
 	button.active {
 		background: black;
 		color: white;
