@@ -1,7 +1,9 @@
 <script>
     import { physicals, socials, knowledges, practicals } from './CharacterData.svelte';
     import SecondariesTable from './SecondariesTable.svelte';
+    import Specials from './Specials.svelte';
     export let totals;
+    export let specials;
 </script>
 
 <div class="container">
@@ -17,26 +19,43 @@
     <div class="practicals">
         <SecondariesTable labels={practicals} {totals}></SecondariesTable>
     </div>
+    <div class="specials">
+        <Specials {specials}></Specials>
+    </div>
 </div>
+
+
 
 <style>
     .container {
         display: grid;
         grid-template-columns: max-content max-content;
-        grid-template-rows: max-content max-content;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "physicals socials"
+        "knowledges practicals"
+        "specials specials";
         column-gap: 10px;
         row-gap: 10px;
     }
     .physicals {
         justify-self: center;
+        grid-area: physicals;
     }
     .socials {
         justify-self: center;
+        grid-area: socials;
     }
     .knowledges {
         justify-self: center;
+        grid-area: knowledges;
     }
     .practicals {
         justify-self: center;
+        grid-area: practicals;
+    }
+    .specials {
+        justify-self: center;
+        grid-area: specials;
     }
 </style>

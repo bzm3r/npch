@@ -1,24 +1,47 @@
 <script>
     import { primaries1, primaries2 } from './CharacterData.svelte';
     import IconText from './IconText.svelte';
+	import Specials from './Specials.svelte';
+	import PrimariesRow from './PrimariesRow.svelte';
 
     export let totals;
+	export let specials;
 </script>
 
-<table>
-	<tr>
-		{#each primaries1 as primary}
-		<td>
-			<IconText icon={primary} text={totals[primary]}></IconText>
-		</td>
-		{/each}
-	</tr>
-	<tr>
-		{#each primaries2 as primary}
-		<td>
-			<IconText icon={primary} text={totals[primary]}></IconText>
-		</td>
-		{/each}
-	</tr>
-</table>
+<div class="container">
+	<div class="primaries1">
+		<PrimariesRow primaries={primaries1} {totals}></PrimariesRow>
+	</div>
+	<div class="primaries2">
+		<PrimariesRow primaries={primaries2} {totals}></PrimariesRow>
+	</div>
+	<div class="specials">
+		<Specials {specials}></Specials>
+	</div>
+</div>
 
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: max-content;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "primaries1"
+        "primaries2"
+        "specials";
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+    .primaries1 {
+        justify-self: center;
+        grid-area: primaries1;
+    }
+    .primaries2 {
+        justify-self: center;
+        grid-area: primaries2;
+    }
+    .specials {
+        justify-self: center;
+        grid-area: specials;
+    }
+</style>

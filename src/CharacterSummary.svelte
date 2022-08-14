@@ -19,7 +19,9 @@
 	
 	let titles = [];
 	let totals = new Map();
-	let specials = [];
+	let primary_specials = [];
+	let skill_specials = [];
+	let flavor_specials = [];
 	
 	function updateTitles(r_dat, c1_dat, c2_dat, c3_dat) {
 		titles = [];
@@ -27,14 +29,18 @@
 			titles.push(dat.title);
 		}})
 	}
-	
+
 	function updateSpecials(r_dat, c1_dat, c2_dat, c3_dat) {
-		specials = [];
+		primary_specials = [];
+		skill_specials = [];
+		flavor_specials = [];
 		[r_dat, c1_dat, c2_dat, c3_dat].forEach(dat => {if (dat != null) {
-			specials.push(...dat.specials);
+			primary_specials.push(...dat.specials.primary);
+			skill_specials.push(...dat.specials.skill);
+			flavor_specials.push(...dat.specials.flavor);
 		}})
 	}
-	
+
 	function updateTotals(r_dat, c1_dat, c2_dat, c3_dat) {
 		for (const label of all_labels) {
 			totals[label] = 0;
@@ -54,9 +60,9 @@
 	}
 
 	let tabs = [
-		{id: 0, title: "Primaries", component: Primaries, inputs: { totals: totals }},
-		{id: 1, title: "Secondaries", component: Secondaries, inputs: { totals: totals }},
-		{id: 2, title: "Specials", component: Specials, inputs: { specials: specials }},
+		{id: 0, title: "Primaries", component: Primaries, inputs: { totals: totals, specials: primary_specials }},
+		{id: 1, title: "Secondaries", component: Secondaries, inputs: { totals: totals, specials: skill_specials }},
+		{id: 2, title: "Specials", component: Specials, inputs: { specials: flavor_specials }},
 		{id: 3, title: "Equipment", component: Equipment, inputs: {}},
 	];
 	
@@ -85,9 +91,9 @@
 	$: updateSpecials(r_dat, c1_dat, c2_dat, c3_dat);
 	$: updateTotals(r_dat, c1_dat, c2_dat, c3_dat);
 	$: tabs = [
-		{id: 0, title: "Primaries", component: Primaries, inputs: { totals: totals }},
-		{id: 1, title: "Secondaries", component: Secondaries, inputs: { totals: totals }},
-		{id: 2, title: "Specials", component: Specials, inputs: { specials: specials }},
+		{id: 0, title: "Primaries", component: Primaries, inputs: { totals: totals, specials: primary_specials }},
+		{id: 1, title: "Secondaries", component: Secondaries, inputs: { totals: totals, specials: skill_specials }},
+		{id: 2, title: "Specials", component: Specials, inputs: { specials: flavor_specials }},
 		{id: 3, title: "Equipment", component: Equipment, inputs: {}},
 	];
 </script>

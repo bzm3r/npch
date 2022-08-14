@@ -1,5 +1,4 @@
-<script context="module">
-	export let csv_data = String.raw`title,type,hp,atk,def,init,skl,will,ref,fort,Agility,Dexterity,Strength,Piloting,Stealth,Endurance,Squirm,Biotech,History,People,Places,Engineering,Computers,Medical,People reading,Deceive,Manipulate,Soothe,Command,Persuade,Entertain,Perception,Survival,Research,Craft,Zero-G,specials,
+title,type,hp,atk,def,init,skl,will,ref,fort,Agility,Dexterity,Strength,Piloting,Stealth,Endurance,Squirm,Biotech,History,People,Places,Engineering,Computers,Medical,People reading,Deceive,Manipulate,Soothe,Command,Persuade,Entertain,Perception,Survival,Research,Craft,Zero-G,specials,
 Archon,race,25,0,0,-2,1,2,-1,2,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,"flav:Robotic;
 flav:Immune to fear;
 flav:IronHeart;",
@@ -50,5 +49,4 @@ Strategist,class,2,0,0,3,2,2,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,2,2,0,2,0,2
 Swarmmaster,class,1,0,0,2,2,2,0,2,0,0,0,0,0,0,2,2,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,,
 Swordfiend,class,1,1,1,1,1,0,2,0,3,3,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,pri:+1 ATK when using sword,
 Tinker,class,0,1,0,0,3,0,3,0,0,0,0,2,0,0,0,0,0,0,0,3,2,0,0,0,0,0,0,0,0,0,0,2,3,0,pri:+1 charge (Personal or companion),
-Wardog,class,3,1,1,0,0,0,0,2,0,0,2,2,0,4,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,2,0,0,0,,`;
-</script>
+Wardog,class,3,1,1,0,0,0,0,2,0,0,2,2,0,4,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,2,0,0,0,,

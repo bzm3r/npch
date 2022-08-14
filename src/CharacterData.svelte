@@ -15,6 +15,34 @@
 	export let races = new Map();
 	export let classes = new Map();
 	
+	class Special {
+		constructor(raw_special_str) {
+			let type, str;
+			[type, str] = raw_special_str.split(":").map(s => s.trim());
+			this.type = type;
+			this.str = str;
+		}
+	}
+
+	class SpecialsData {
+		constructor(raw_specials_str) {
+			let specials = raw_specials_str.split(';').map(s => s.trim()).filter(s => s.length > 0).map(s => new Special(s));
+
+			this.flavor = [];
+			this.primary = [];
+			this.skill = [];
+			for (const special of specials) {
+				if (special.type === "flav") {
+					this.flavor.push(special.str);
+				} else if (special.type === "pri") {
+					this.primary.push(special.str);
+				} else if (special.type === "skl") {
+					this.skill.push(special.str)
+				}
+			}
+		}
+	}
+
 	class SpecializationData {
 		constructor(raw_data) {
 			this.title = raw_data.title;
@@ -23,12 +51,7 @@
 				this[label] = parseInt(raw_data[label]);
 			}
 			
-			this.specials = [];
-			for (const special of [raw_data.special0, raw_data.special1, raw_data.special2]) {
-				if (special != "") {
-					this.specials.push(special);
-				}
-			}
+			this.specials = new SpecialsData(raw_data.specials);
 		}
 	}
 			
