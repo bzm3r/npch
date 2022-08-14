@@ -12,17 +12,16 @@
 </script>
 
 <div class="container">
-	<table>
-		<SelectBox bind:selected={race} title="Race" name="race-select" choices={selectable_races}></SelectBox>
-		<SelectBox bind:selected={class1} title="Class 1" name="c1-select" choices={selectable_classes}></SelectBox>
-		<SelectBox bind:selected={class2} title="Class 2" name="c2-select" choices={selectable_classes}></SelectBox>
-		<SelectBox bind:selected={class3} title="Class 3" name="c3-select" choices={selectable_classes}></SelectBox>
-	</table>
+	<SelectBox bind:selected={race} name="race-select" choices={selectable_races}></SelectBox>
+	<SelectBox bind:selected={class1} name="c1-select" choices={selectable_classes}></SelectBox>
+	<SelectBox bind:selected={class2} name="c2-select" choices={selectable_classes}></SelectBox>
+	<SelectBox bind:selected={class3} name="c3-select" choices={selectable_classes}></SelectBox>
 </div>
 
 <style>
 	.container {
-		display: flex;
+		display: grid;
+		grid-template-rows: repeat(4, 1fr);
 		justify-content: center;
 	}
 </style>
