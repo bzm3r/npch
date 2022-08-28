@@ -8,9 +8,9 @@
 	let class3 = "";
 </script>
 
-<div class="header-img">
+<!-- <div class="header-img">
 	<img class="header-pic" src="/assets/header.webp" alt="city on a planet's darkside" height=350px>
-</div>
+</div> -->
 
 <SelectBoxes bind:race={race} bind:class1={class1} bind:class2={class2} bind:class3={class3}></SelectBoxes>
 
@@ -19,7 +19,6 @@
 
 <style>
 	.header-img {
-		height: 0px;
 		display: flex;
 		align-items: center;
 		justify-content: center;

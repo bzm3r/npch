@@ -1,6 +1,5 @@
 <script>
     import { primaries1, primaries2 } from './CharacterData.svelte';
-    import IconText from './IconText.svelte';
 	import Specials from './Specials.svelte';
 	import PrimariesRow from './PrimariesRow.svelte';
 
@@ -23,14 +22,12 @@
 <style>
     .container {
         display: grid;
-        grid-template-columns: max-content;
+        grid-template-columns: auto;
         grid-template-rows: auto;
         grid-template-areas:
         "primaries1"
         "primaries2"
         "specials";
-        column-gap: 10px;
-        row-gap: 10px;
     }
     .primaries1 {
         justify-self: center;

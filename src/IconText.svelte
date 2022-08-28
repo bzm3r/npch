@@ -7,7 +7,7 @@
         def: 60,
         fort: 60,
         hp: 65,
-        init: 80,
+        init: 90,
         ref: 60,
         skl: 60,
         will: 60,

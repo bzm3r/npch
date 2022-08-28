@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    version="1.2"
-   width="16.620001mm"
-   height="16.629999mm"
-   viewBox="0 0 1662.0001 1663"
+   width="49.999912"
+   height="49.999996"
+   viewBox="0 0 1322.9143 1322.9167"
    preserveAspectRatio="xMidYMid"
    fill-rule="evenodd"
    stroke-width="28.222"
@@ -30,19 +30,20 @@
    fit-margin-left="0"
    fit-margin-right="0"
    fit-margin-bottom="0"
-   inkscape:zoom="0.68087123"
-   inkscape:cx="351.75521"
-   inkscape:cy="480.26703"
+   inkscape:zoom="10.89394"
+   inkscape:cx="25.381084"
+   inkscape:cy="22.764951"
    inkscape:window-width="2560"
    inkscape:window-height="1400"
    inkscape:window-x="-12"
    inkscape:window-y="-12"
    inkscape:window-maximized="1"
-   inkscape:current-layer="svg21" />
+   inkscape:current-layer="svg21"
+   units="px" />
  <g
    visibility="visible"
    id="MasterSlide_1_Default"
-   transform="translate(-1488,-1249)">
+   transform="translate(-1488.0931,-1249.1169)">
   <desc
    id="desc2">Master slide
   </desc>
@@ -58,23 +59,28 @@
  <g
    visibility="visible"
    id="Slide_1_page1"
-   transform="translate(-1488,-1249)">
+   transform="matrix(0.79610383,0,0,0.79562643,-1184.7076,-993.84243)"
+   style="stroke-width:99.736;stroke-miterlimit:4;stroke-dasharray:none">
   <g
-   id="DrawingGroup_1">
+   id="DrawingGroup_1"
+   style="stroke-width:99.736;stroke-miterlimit:4;stroke-dasharray:none">
    <g
-   id="g12">
+   id="g12"
+   style="stroke-width:99.736;stroke-miterlimit:4;stroke-dasharray:none">
     <path
    fill="#ffffff"
    stroke="none"
    d="m 2317,1483 c 339,0 598,258 598,597 0,339 -259,598 -598,598 -339,0 -597,-259 -597,-598 0,-339 258,-597 597,-597 z"
-   id="path7" />
+   id="path7"
+   style="stroke-width:99.736;stroke-miterlimit:4;stroke-dasharray:none" />
     <path
    fill="none"
    stroke="#000000"
    id="Drawing_1_0"
    stroke-width="100"
    stroke-linejoin="round"
-   d="m 2317,1483 c 339,0 598,258 598,597 0,339 -259,598 -598,598 -339,0 -597,-259 -597,-598 0,-339 258,-597 597,-597 z" />
+   d="m 2317,1483 c 339,0 598,258 598,597 0,339 -259,598 -598,598 -339,0 -597,-259 -597,-598 0,-339 258,-597 597,-597 z"
+   style="stroke-width:99.736;stroke-miterlimit:4;stroke-dasharray:none" />
     <rect
    fill="none"
    stroke="none"
@@ -82,17 +88,20 @@
    y="1484"
    width="1196"
    height="1196"
-   id="rect10" />
+   id="rect10"
+   style="stroke-width:99.736;stroke-miterlimit:4;stroke-dasharray:none" />
    </g>
    <g
-   id="g17">
+   id="g17"
+   style="stroke-width:99.736;stroke-miterlimit:4;stroke-dasharray:none">
     <path
    fill="none"
    stroke="#000000"
    id="Drawing_2_0"
    stroke-width="100"
    stroke-linejoin="round"
-   d="m 2319,1299 c 443,0 781,338 781,781 0,443 -338,782 -781,782 -443,0 -781,-339 -781,-782 0,-443 338,-781 781,-781 z" />
+   d="m 2319,1299 c 443,0 781,338 781,781 0,443 -338,782 -781,782 -443,0 -781,-339 -781,-782 0,-443 338,-781 781,-781 z"
+   style="stroke-width:99.736;stroke-miterlimit:4;stroke-dasharray:none" />
     <rect
    fill="none"
    stroke="none"
@@ -100,7 +109,8 @@
    y="1300"
    width="1563"
    height="1564"
-   id="rect15" />
+   id="rect15"
+   style="stroke-width:99.736;stroke-miterlimit:4;stroke-dasharray:none" />
    </g>
   </g>
  </g>

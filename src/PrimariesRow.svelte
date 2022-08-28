@@ -16,7 +16,7 @@
 <style>
     .container {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: auto;
+        grid-template-columns: repeat(4, 75px);
+        grid-template-rows: 75px;
     }
 </style>

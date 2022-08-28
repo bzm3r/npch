@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    version="1.2"
-   width="14.459984mm"
-   height="14.46mm"
-   viewBox="0 0 1445.9984 1446"
+   width="13.229154mm"
+   height="13.229166mm"
+   viewBox="0 0 1322.9154 1322.9166"
    preserveAspectRatio="xMidYMid"
    fill-rule="evenodd"
    stroke-width="28.222"
@@ -30,9 +30,9 @@
    fit-margin-left="0"
    fit-margin-right="0"
    fit-margin-bottom="0"
-   inkscape:zoom="0.68087123"
-   inkscape:cx="353.22391"
-   inkscape:cy="475.86091"
+   inkscape:zoom="10.89394"
+   inkscape:cx="40.52712"
+   inkscape:cy="22.30598"
    inkscape:window-width="2560"
    inkscape:window-height="1400"
    inkscape:window-x="-12"
@@ -42,7 +42,7 @@
  <g
    visibility="visible"
    id="MasterSlide_1_Default"
-   transform="translate(-1449.0008,-1349)">
+   transform="translate(-1455.446,-1355.4453)">
   <desc
    id="desc2">Master slide
   </desc>
@@ -58,23 +58,28 @@
  <g
    visibility="visible"
    id="Slide_1_page1"
-   transform="translate(-1449.0008,-1349)">
+   transform="matrix(0.92387741,0,0,0.92387741,-1345.2041,-1252.8157)"
+   style="stroke-width:85.9179;stroke-miterlimit:4;stroke-dasharray:none">
   <g
-   id="DrawingGroup_1">
+   id="DrawingGroup_1"
+   style="stroke-width:85.9179;stroke-miterlimit:4;stroke-dasharray:none">
    <g
-   id="g12">
+   id="g12"
+   style="stroke-width:85.9179;stroke-miterlimit:4;stroke-dasharray:none">
     <path
    fill="#ffffff"
    stroke="none"
    d="m 1678,2628 h 988 L 2515,1535 h -687 z"
-   id="path7" />
+   id="path7"
+   style="stroke-width:85.9179;stroke-miterlimit:4;stroke-dasharray:none" />
     <path
    fill="none"
    stroke="#000000"
    id="Drawing_1_0"
    stroke-width="100"
    stroke-linejoin="round"
-   d="m 1678,2628 h 988 L 2515,1535 h -687 z" />
+   d="m 1678,2628 h 988 L 2515,1535 h -687 z"
+   style="stroke-width:85.9179;stroke-miterlimit:4;stroke-dasharray:none" />
     <rect
    fill="none"
    stroke="none"
@@ -82,17 +87,20 @@
    y="1536"
    width="989"
    height="1094"
-   id="rect10" />
+   id="rect10"
+   style="stroke-width:85.9179;stroke-miterlimit:4;stroke-dasharray:none" />
    </g>
    <g
-   id="g17">
+   id="g17"
+   style="stroke-width:85.9179;stroke-miterlimit:4;stroke-dasharray:none">
     <path
    fill="none"
    stroke="#000000"
    id="Drawing_2_0"
    stroke-width="100"
    stroke-linejoin="round"
-   d="M 1499,2745 H 2845 L 2639,1399 h -935 z" />
+   d="M 1499,2745 H 2845 L 2639,1399 h -935 z"
+   style="stroke-width:85.9179;stroke-miterlimit:4;stroke-dasharray:none" />
     <rect
    fill="none"
    stroke="none"
@@ -100,7 +108,8 @@
    y="1400"
    width="1347"
    height="1347"
-   id="rect15" />
+   id="rect15"
+   style="stroke-width:85.9179;stroke-miterlimit:4;stroke-dasharray:none" />
    </g>
   </g>
  </g>
