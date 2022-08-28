@@ -18,12 +18,12 @@
 </CharacterSummary>
 
 <style>
-	.header-img {
+	/* .header-img {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
 	.header-img::before {
 		background: linear-gradient(to bottom, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 1.0));	
-	}
+	} */
 </style>

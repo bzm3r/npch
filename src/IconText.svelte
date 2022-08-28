@@ -11,12 +11,26 @@
         ref: 60,
         skl: 60,
         will: 60,
-    }
+    };
+    let iconX = {
+        atk: 50,
+        def: 50,
+        fort: 55,
+        hp: 50,
+        init: 55,
+        ref: 50,
+        skl: 40,
+        will: 50,
+    };
 </script>
 
 <div class="icon">
     <img class="iconImage" {src} alt={icon} title={icon}>
-    <div class="iconText" style:--y="-{iconY[icon]}%">{text}</div>
+    <div class="iconText" 
+            style:--y="-{iconY[icon]}%"
+            style:--x="-{iconX[icon]}%">
+        {text}
+    </div>
 </div>
 
 <style>
@@ -34,7 +48,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, var(--y));
+    transform: translate(var(--x), var(--y));
     z-index: 1;
     font-weight: bold;
     }
