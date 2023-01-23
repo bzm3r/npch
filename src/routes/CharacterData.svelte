@@ -44,38 +44,20 @@
 	export let races = new Map();
 	export let classes = new Map();
 
-	class Special {
-		constructor(raw_special_str) {
-			let type, str;
-			[type, str] = raw_special_str.split(':').map((s) => s.trim());
-			this.type = type;
-			this.str = str;
-		}
+	function parse_special_str(special_str) {
+		let splits = special_str
+			.split(';')
+			.map((s) => s.trim())
+			.filter((s) => s.length > 0);
+		return [...splits];
 	}
 
 	class SpecialsData {
-		constructor(raw_specials_str) {
-			let specials = raw_specials_str
-				.split(';')
-				.map((s) => s.trim())
-				.filter((s) => s.length > 0)
-				.map((s) => new Special(s));
-
-			this.flavor = [];
-			this.primary = [];
-			this.skill = [];
-			this.equipment = [];
-			for (const special of specials) {
-				if (special.type === 'flav') {
-					this.flavor.push(special.str);
-				} else if (special.type === 'pri') {
-					this.primary.push(special.str);
-				} else if (special.type === 'skl') {
-					this.skill.push(special.str);
-				} else if (special.type === 'equip') {
-					this.equipment.push(special.str);
-				}
-			}
+		constructor(primary_str, skills_str, flavor_str, equipment_str) {
+			this.primary = parse_special_str(primary_str);
+			this.skill = parse_special_str(skills_str);
+			this.flavor = parse_special_str(flavor_str);
+			this.equipment = parse_special_str(equipment_str);
 		}
 	}
 
@@ -87,7 +69,12 @@
 				this[label] = parseInt(raw_data[label]);
 			}
 
-			this.specials = new SpecialsData(raw_data.specials);
+			this.specials = new SpecialsData(
+				raw_data.specials_primary,
+				raw_data.specials_skill,
+				raw_data.specials_flavor,
+				raw_data.equipment
+			);
 		}
 	}
 
