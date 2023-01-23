@@ -19,7 +19,7 @@
 	select {
 		width: 200px;
 	}
-	.bordered {
+	.human_academic {
 		border-color: black;
 		border-width: 5px;
 		border-style: solid;

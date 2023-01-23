@@ -11,6 +11,7 @@
 	$: selectable_classes = class_titles.filter(
 		(class_title) => class_title != class1 && class_title != class2 && class_title != class3
 	);
+	$: human_academic_style = race === 'Human-Academic' ? 'human_academic' : '';
 </script>
 
 <div class="container">
@@ -18,13 +19,13 @@
 		bind:selected={race}
 		name="race-select"
 		choices={selectable_races}
-		html_class={race === 'Human-Aristocrat' ? 'bordered' : ''}
+		html_class={human_academic_style}
 	/>
 	<SelectBox
 		bind:selected={class1}
 		name="c1-select"
 		choices={selectable_classes}
-		html_class={race === 'Human-Aristocrat' ? 'bordered' : ''}
+		html_class={human_academic_style}
 	/>
 	<SelectBox bind:selected={class2} name="c2-select" choices={selectable_classes} />
 	<SelectBox bind:selected={class3} name="c3-select" choices={selectable_classes} />
