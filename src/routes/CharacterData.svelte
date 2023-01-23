@@ -1,43 +1,37 @@
 <script context="module">
-	import { csvParse } from "d3-dsv";
-	import csv_data from "/assets/npch_data.csv?raw";
+	import { csvParse } from 'd3-dsv';
+	import csv_data from '$lib/npch_data.csv?raw';
 
-	export const primaries1 = ["hp", "atk", "def", "init"];
-	export const primaries2 = ["skl", "will", "ref", "fort"];
+	export const primaries1 = ['hp', 'atk', 'def', 'init'];
+	export const primaries2 = ['skl', 'will', 'ref', 'fort'];
 	export const physicals = [
-		"Agility",
-		"Dexterity",
-		"Strength",
-		"Zero-G",
-		"Stealth",
-		"Endurance",
-		"Squirm",
+		'Agility',
+		'Dexterity',
+		'Strength',
+		'Zero-G',
+		'Stealth',
+		'Endurance',
+		'Squirm'
 	];
 	export const socials = [
-		"Soothe",
-		"Entertain",
-		"Deceive",
-		"Manipulate",
-		"Persuade",
-		"Command",
-		"People reading",
+		'Soothe',
+		'Entertain',
+		'Deceive',
+		'Manipulate',
+		'Persuade',
+		'Command',
+		'People reading'
 	];
 	export const knowledges = [
-		"Biotech",
-		"History",
-		"People",
-		"Places",
-		"Engineering",
-		"Computers",
-		"Medical",
+		'Biotech',
+		'History',
+		'People',
+		'Places',
+		'Engineering',
+		'Computers',
+		'Medical'
 	];
-	export const practicals = [
-		"Perception",
-		"Survival",
-		"Research",
-		"Craft",
-		"Piloting",
-	];
+	export const practicals = ['Perception', 'Survival', 'Research', 'Craft', 'Piloting'];
 
 	export const all_labels = primaries1
 		.concat(primaries2)
@@ -53,7 +47,7 @@
 	class Special {
 		constructor(raw_special_str) {
 			let type, str;
-			[type, str] = raw_special_str.split(":").map((s) => s.trim());
+			[type, str] = raw_special_str.split(':').map((s) => s.trim());
 			this.type = type;
 			this.str = str;
 		}
@@ -62,7 +56,7 @@
 	class SpecialsData {
 		constructor(raw_specials_str) {
 			let specials = raw_specials_str
-				.split(";")
+				.split(';')
 				.map((s) => s.trim())
 				.filter((s) => s.length > 0)
 				.map((s) => new Special(s));
@@ -72,13 +66,13 @@
 			this.skill = [];
 			this.equipment = [];
 			for (const special of specials) {
-				if (special.type === "flav") {
+				if (special.type === 'flav') {
 					this.flavor.push(special.str);
-				} else if (special.type === "pri") {
+				} else if (special.type === 'pri') {
 					this.primary.push(special.str);
-				} else if (special.type === "skl") {
+				} else if (special.type === 'skl') {
 					this.skill.push(special.str);
-				} else if (special.type === "equip") {
+				} else if (special.type === 'equip') {
 					this.equipment.push(special.str);
 				}
 			}
@@ -99,9 +93,9 @@
 
 	for (const data_row of input_data.values()) {
 		let spec_dat = new SpecializationData(data_row);
-		if (spec_dat.type === "race") {
+		if (spec_dat.type === 'race') {
 			races.set(spec_dat.title, spec_dat);
-		} else if (spec_dat.type === "class") {
+		} else if (spec_dat.type === 'class') {
 			classes.set(spec_dat.title, spec_dat);
 		}
 	}
