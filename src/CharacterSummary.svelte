@@ -1,44 +1,50 @@
 <script>
-	import { all_labels, races, classes } from './CharacterData.svelte';
-	import Primaries from './Primaries.svelte';
-	import Secondaries from './Secondaries.svelte';
-	import Equipment from './Equipment.svelte';
-	import Specials from './Specials.svelte';
-	import Tabs from './Tabs.svelte';
-	import Tab from './Tab.svelte';
-	
+	import { all_labels, races, classes } from "./CharacterData.svelte";
+	import Primaries from "./Primaries.svelte";
+	import Secondaries from "./Secondaries.svelte";
+	import Specials from "./Specials.svelte";
+	import Tabs from "./Tabs.svelte";
+	import Tab from "./Tab.svelte";
+
 	export let race = "";
 	export let class1 = "";
 	export let class2 = "";
 	export let class3 = "";
-	
+
 	let r_dat = null;
 	let c1_dat = null;
 	let c2_dat = null;
 	let c3_dat = null;
-	
+
 	let titles = [];
 	let totals = new Map();
 	let primary_specials = [];
 	let skill_specials = [];
 	let flavor_specials = [];
-	
+	let equipment = [];
+
 	function updateTitles(r_dat, c1_dat, c2_dat, c3_dat) {
 		titles = [];
-		[r_dat, c1_dat, c2_dat, c3_dat].forEach(dat => {if (dat != null) {
-			titles.push(dat.title);
-		}})
+		[r_dat, c1_dat, c2_dat, c3_dat].forEach((dat) => {
+			if (dat != null) {
+				titles.push(dat.title);
+			}
+		});
 	}
 
 	function updateSpecials(r_dat, c1_dat, c2_dat, c3_dat) {
 		primary_specials = [];
 		skill_specials = [];
 		flavor_specials = [];
-		[r_dat, c1_dat, c2_dat, c3_dat].forEach(dat => {if (dat != null) {
-			primary_specials.push(...dat.specials.primary);
-			skill_specials.push(...dat.specials.skill);
-			flavor_specials.push(...dat.specials.flavor);
-		}})
+		equipment = [];
+		[r_dat, c1_dat, c2_dat, c3_dat].forEach((dat) => {
+			if (dat != null) {
+				primary_specials.push(...dat.specials.primary);
+				skill_specials.push(...dat.specials.skill);
+				flavor_specials.push(...dat.specials.flavor);
+				equipment.push(...dat.specials.equipment);
+			}
+		});
 	}
 
 	function updateTotals(r_dat, c1_dat, c2_dat, c3_dat) {
@@ -60,12 +66,32 @@
 	}
 
 	let tabs = [
-		{id: 0, title: "Primaries", component: Primaries, inputs: { totals: totals, specials: primary_specials }},
-		{id: 1, title: "Secondaries", component: Secondaries, inputs: { totals: totals, specials: skill_specials }},
-		{id: 2, title: "Specials", component: Specials, inputs: { specials: flavor_specials }},
-		{id: 3, title: "Equipment", component: Equipment, inputs: {}},
+		{
+			id: 0,
+			title: "Primaries",
+			component: Primaries,
+			inputs: { totals: totals, specials: primary_specials },
+		},
+		{
+			id: 1,
+			title: "Secondaries",
+			component: Secondaries,
+			inputs: { totals: totals, specials: skill_specials },
+		},
+		{
+			id: 2,
+			title: "Specials",
+			component: Specials,
+			inputs: { specials: flavor_specials },
+		},
+		{
+			id: 3,
+			title: "Equipment",
+			component: Specials,
+			inputs: { specials: equipment },
+		},
 	];
-	
+
 	$: if (race != "") {
 		r_dat = races.get(race);
 	} else {
@@ -91,16 +117,36 @@
 	$: updateSpecials(r_dat, c1_dat, c2_dat, c3_dat);
 	$: updateTotals(r_dat, c1_dat, c2_dat, c3_dat);
 	$: tabs = [
-		{id: 0, title: "Primaries", component: Primaries, inputs: { totals: totals, specials: primary_specials }},
-		{id: 1, title: "Secondaries", component: Secondaries, inputs: { totals: totals, specials: skill_specials }},
-		{id: 2, title: "Specials", component: Specials, inputs: { specials: flavor_specials }},
-		{id: 3, title: "Equipment", component: Equipment, inputs: {}},
+		{
+			id: 0,
+			title: "Primaries",
+			component: Primaries,
+			inputs: { totals: totals, specials: primary_specials },
+		},
+		{
+			id: 1,
+			title: "Secondaries",
+			component: Secondaries,
+			inputs: { totals: totals, specials: skill_specials },
+		},
+		{
+			id: 2,
+			title: "Specials",
+			component: Specials,
+			inputs: { specials: flavor_specials },
+		},
+		{
+			id: 3,
+			title: "Equipment",
+			component: Specials,
+			inputs: { specials: equipment },
+		},
 	];
 </script>
 
 <Tabs>
-	{#each tabs as {id, title, component, inputs}}
-		<Tab id={id} title={title}>
+	{#each tabs as { id, title, component, inputs }}
+		<Tab {id} {title}>
 			<svelte:component this={component} {...inputs} />
 		</Tab>
 	{/each}
