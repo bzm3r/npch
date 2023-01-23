@@ -1,5 +1,4 @@
-<script context="module">
-	export let csv_data = String.raw`title,type,hp,atk,def,init,skl,will,ref,fort,Agility,Dexterity,Strength,Piloting,Stealth,Endurance,Squirm,Biotech,History,People,Places,Engineering,Computers,Medical,People reading,Deceive,Manipulate,Soothe,Command,Persuade,Entertain,Perception,Survival,Research,Craft,Zero-G,specials,images
+title,type,hp,atk,def,init,skl,will,ref,fort,Agility,Dexterity,Strength,Piloting,Stealth,Endurance,Squirm,Biotech,History,People,Places,Engineering,Computers,Medical,People reading,Deceive,Manipulate,Soothe,Command,Persuade,Entertain,Perception,Survival,Research,Craft,Zero-G,specials,images
 Archon,race,25,0,0,-2,1,2,-1,2,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,"flav:Robotic;  
 flav:Immune to fear;
 flav:IronHeart;",
@@ -15,7 +14,6 @@ Nix,race,21,0,0,0,2,1,1,1,0,0,0,0,0,0,2,2,2,0,0,0,0,0,2,0,0,2,0,0,0,2,0,0,2,0,fl
 Tsuku,race,20,1,0,4,2,0,3,0,0,3,0,3,3,0,0,0,0,0,0,3,0,0,-2,-2,-2,-2,-2,-2,-2,0,0,0,3,3,flav:Robotic; flav:Resistant to heat and radiation; equip: The Song (single use +10 computing),
 Vesp,race,17,0,0,1,4,3,0,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,3,3,0,flav:Bookworm skill rank; skl:+1 charge/gland or +3 on class skill; equip: Dichotomy,
 A390# Spider Drone,class,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,flav:Repair robot Minion; equip: Repair Patch; equip: scantech fragment;,
-Apothecary,class,1,0,1,0,1,1,1,2,0,0,0,0,0,0,0,2,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,2,2,0,skl:+2 DC on Biotech,
 Bodyguard,class,2,0,2,2,0,1,1,1,0,0,0,0,0,0,0,0,2,2,0,0,0,2,2,0,0,2,0,0,0,2,0,0,0,0,pri:+1 ATK unarmed OR light guns; pri:+1 crit def range; equip: Your hands are 2d4 weapons; equip: Hardlight forcefield;,
 Brute,class,3,2,0,0,0,0,0,2,0,0,4,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,"pri:+1 ATK if unarmed, or bludgeoning; equip:your hands are 3d4 weapons; equip: table leg (4d4); equip: a bottle of cheap booze;",
 Calabrist,class,0,0,0,0,2,1,1,1,0,0,0,2,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,2,0,0,2,0,2,0,pri:+1 ATK or +1 DEF; pri:+1HP or +1 companion charge; pri:+1 ATK with Signature Weapon; equip: Signiture weapon (your choice of firearm),
@@ -53,5 +51,4 @@ Swordfiend,class,1,1,1,1,1,0,2,0,3,3,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0
 Tinker,class,0,1,0,0,3,0,3,0,0,0,0,2,0,0,0,0,0,0,0,3,2,0,0,0,0,0,0,0,0,0,0,2,3,0,pri:+1 charge (Personal or companion); equip: 4 random scrap cards;,
 Wardog,class,3,1,1,0,0,0,0,2,0,0,2,2,0,4,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,2,0,0,0,equip: 3 flashbang grenades; equip: 3d6 shotgun;,
 Seeker,class,0,0,0,1,3,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,3,2,3,2,0,"flav: expertise in 4 specialties; equip: A weathered lab diary; equip: a tiny pick axe; equip: a microscope; equip: and a trinket
-from Earth; skl: +3 in one knowledge skill of your choice.",`;
-</script>
+from Earth; skl: +3 in one knowledge skill of your choice.",

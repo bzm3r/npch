@@ -1,6 +1,6 @@
 <script context="module">
 	import { csvParse } from "d3-dsv";
-	import { csv_data } from "./CsvData.svelte";
+	import csv_data from "/assets/npch_data.csv?raw";
 
 	export const primaries1 = ["hp", "atk", "def", "init"];
 	export const primaries2 = ["skl", "will", "ref", "fort"];
