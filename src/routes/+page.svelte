@@ -9,6 +9,11 @@
 	let class3 = '';
 </script>
 
+<svelte:head>
+	<title>NPCH Character Calculator</title>
+	<meta name="description" content="NPCH Character Calculator" />
+</svelte:head>
+
 <!-- <div class="header-img">
 	<img class="header-pic" src="/assets/header.webp" alt="city on a planet's darkside" height=350px>
 </div> -->
