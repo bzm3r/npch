@@ -4,6 +4,7 @@
 
 	export const primaries1 = ['hp', 'atk', 'def', 'init'];
 	export const primaries2 = ['skl', 'will', 'ref', 'fort'];
+	export const primaries3 = ['Charges', 'Glands'];
 	export const physicals = [
 		'Agility',
 		'Dexterity',
@@ -35,6 +36,7 @@
 
 	export const all_labels = primaries1
 		.concat(primaries2)
+		.concat(primaries3)
 		.concat(physicals)
 		.concat(socials)
 		.concat(knowledges)

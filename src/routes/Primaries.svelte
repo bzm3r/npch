@@ -1,44 +1,56 @@
 <script>
-    import { primaries1, primaries2 } from './CharacterData.svelte';
-	import Specials from './Specials.svelte';
+	import { primaries1, primaries2 } from './CharacterData.svelte';
 	import PrimariesRow from './PrimariesRow.svelte';
+	import ChargesAndGlands from './ChargesAndGlands.svelte';
+	import Specials from './Specials.svelte';
 
-    export let totals;
+	export let totals;
 	export let specials;
+
+	$: total_charges = totals['Charges'] > 0 ? 3 * totals['Charges'] : 0;
+	$: total_glands = totals['Glands'] > 0 ? totals['Glands'] + 1 : 0;
 </script>
 
 <div class="container">
 	<div class="primaries1">
-		<PrimariesRow primaries={primaries1} {totals}></PrimariesRow>
+		<PrimariesRow primaries={primaries1} {totals} />
 	</div>
 	<div class="primaries2">
-		<PrimariesRow primaries={primaries2} {totals}></PrimariesRow>
+		<PrimariesRow primaries={primaries2} {totals} />
+	</div>
+	<div class="charges_and_glands">
+		<ChargesAndGlands {total_charges} {total_glands} />
 	</div>
 	<div class="specials">
-		<Specials {specials}></Specials>
+		<Specials {specials} />
 	</div>
 </div>
 
 <style>
-    .container {
-        display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: auto;
-        grid-template-areas:
-        "primaries1"
-        "primaries2"
-        "specials";
-    }
-    .primaries1 {
-        justify-self: center;
-        grid-area: primaries1;
-    }
-    .primaries2 {
-        justify-self: center;
-        grid-area: primaries2;
-    }
-    .specials {
-        justify-self: center;
-        grid-area: specials;
-    }
+	.container {
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: auto;
+		grid-template-areas:
+			'primaries1'
+			'primaries2'
+			'charges_and_glands'
+			'specials';
+	}
+	.primaries1 {
+		justify-self: center;
+		grid-area: primaries1;
+	}
+	.primaries2 {
+		justify-self: center;
+		grid-area: primaries2;
+	}
+	.charges_and_glands {
+		justify-self: center;
+		grid-area: charges_and_glands;
+	}
+	.specials {
+		justify-self: center;
+		grid-area: specials;
+	}
 </style>
