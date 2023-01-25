@@ -7,7 +7,7 @@
 	export let totals;
 	export let specials;
 
-	$: total_charges = totals['Charges'] > 0 ? 3 * totals['Charges'] : 0;
+	$: total_charges = totals['Charges'] > 0 ? totals['Charges'] : 0;
 	$: total_glands = totals['Glands'] > 0 ? totals['Glands'] + 1 : 0;
 </script>
 
