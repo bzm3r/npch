@@ -25,9 +25,12 @@
 
 <style>
 	.container {
+		width: 80%;
 		display: grid;
 		grid-auto-flow: column;
 		grid-template-columns: auto;
+		margin: 0 auto;
+		justify-content: center;
 	}
 
 	.dummy {
