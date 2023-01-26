@@ -9,9 +9,3 @@
 		{/each}
 	</ul>
 </div>
-
-<style>
-	.container {
-		width: 300px;
-	}
-</style>

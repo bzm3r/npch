@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    version="1.2"
-   width="58.366417"
-   height="59.545746"
-   viewBox="0 0 1544.2782 1575.4812"
+   width="60.000027"
+   height="59.999924"
+   viewBox="0 0 1587.5008 1587.498"
    preserveAspectRatio="xMidYMid"
    fill-rule="evenodd"
    stroke-width="28.222"
@@ -11,7 +11,7 @@
    xml:space="preserve"
    id="svg23"
    sodipodi:docname="init.svg"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -30,20 +30,22 @@
    fit-margin-left="0"
    fit-margin-right="0"
    fit-margin-bottom="0"
-   inkscape:zoom="10.89394"
-   inkscape:cx="2.1571627"
-   inkscape:cy="31.026425"
-   inkscape:window-width="2560"
-   inkscape:window-height="1400"
-   inkscape:window-x="-12"
-   inkscape:window-y="-12"
+   inkscape:zoom="1.3617425"
+   inkscape:cx="82.614738"
+   inkscape:cy="110.88734"
+   inkscape:window-width="1920"
+   inkscape:window-height="1046"
+   inkscape:window-x="-11"
+   inkscape:window-y="-11"
    inkscape:window-maximized="1"
    inkscape:current-layer="DrawingGroup_1"
-   units="px" />
+   units="px"
+   inkscape:showpageshadow="2"
+   inkscape:deskcolor="#d1d1d1" />
  <g
    visibility="visible"
    id="MasterSlide_1_Default"
-   transform="translate(-1300.4145,-1257.4721)">
+   transform="translate(-1300.0063,-1257.8763)">
   <desc
    id="desc2">Master slide
   </desc>
@@ -59,14 +61,15 @@
  <g
    visibility="visible"
    id="Slide_1_page1"
-   transform="matrix(1.0481904,0,0,1.0481904,-1360.7814,-1317.8875)"
+   transform="matrix(1.0481904,0,0,1.0481904,-1360.3732,-1318.2917)"
    style="stroke-width:75.7257;stroke-miterlimit:4;stroke-dasharray:none">
   <g
    id="DrawingGroup_1"
    style="stroke-width:75.7257;stroke-miterlimit:4;stroke-dasharray:none">
    
    <g
-   id="g977"><g
+   id="g977"
+   transform="matrix(1.0279888,0,0,1.0076273,-36.725071,-9.2041728)"><g
      id="g12"
      style="stroke-width:86.7418;stroke-miterlimit:4;stroke-dasharray:none"
      transform="matrix(0.87300186,0,0,0.87300186,208.38675,160.2548)">

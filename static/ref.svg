@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    version="1.2"
-   width="13.229167mm"
-   height="13.229167mm"
-   viewBox="0 0 1322.9167 1322.9167"
+   width="15.875004mm"
+   height="15.875004mm"
+   viewBox="0 0 1587.5004 1587.5004"
    preserveAspectRatio="xMidYMid"
    fill-rule="evenodd"
    stroke-width="28.222"
@@ -11,7 +11,7 @@
    xml:space="preserve"
    id="svg21"
    sodipodi:docname="ref.svg"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -30,19 +30,21 @@
    fit-margin-left="0"
    fit-margin-right="0"
    fit-margin-bottom="0"
-   inkscape:zoom="10.89394"
-   inkscape:cx="40.068149"
-   inkscape:cy="45.346313"
-   inkscape:window-width="2560"
-   inkscape:window-height="1400"
-   inkscape:window-x="-12"
-   inkscape:window-y="-12"
+   inkscape:zoom="7.7031788"
+   inkscape:cx="25.1195"
+   inkscape:cy="53.744046"
+   inkscape:window-width="1920"
+   inkscape:window-height="1046"
+   inkscape:window-x="-11"
+   inkscape:window-y="-11"
    inkscape:window-maximized="1"
-   inkscape:current-layer="svg21" />
+   inkscape:current-layer="svg21"
+   inkscape:showpageshadow="2"
+   inkscape:deskcolor="#d1d1d1" />
  <g
    visibility="visible"
    id="MasterSlide_1_Default"
-   transform="translate(-1397.728,-1146.8113)">
+   transform="translate(-1397.7273,-1146.8105)">
   <desc
    id="desc2">Master slide
   </desc>
@@ -58,20 +60,20 @@
  <g
    visibility="visible"
    id="Slide_1_page1"
-   transform="matrix(0.73020914,0,0,0.73020914,-981.14715,-836.56574)"
-   style="stroke-width:108.70173715;stroke-miterlimit:4;stroke-dasharray:none">
+   transform="matrix(0.87625019,0,0,0.87625019,-1177.3747,-1003.8771)"
+   style="stroke-width:108.702;stroke-miterlimit:4;stroke-dasharray:none">
   <g
    id="DrawingGroup_1"
-   style="stroke-width:108.70173715;stroke-miterlimit:4;stroke-dasharray:none">
+   style="stroke-width:108.702;stroke-miterlimit:4;stroke-dasharray:none">
    <g
    id="g12"
-   style="stroke-width:108.70173715;stroke-miterlimit:4;stroke-dasharray:none">
+   style="stroke-width:108.702;stroke-miterlimit:4;stroke-dasharray:none">
     <path
    fill="#ffffff"
    stroke="none"
    d="m 1635,2050 614,-614 614,614 -614,614 z"
    id="path7"
-   style="stroke-width:108.70173715;stroke-miterlimit:4;stroke-dasharray:none" />
+   style="stroke-width:108.702;stroke-miterlimit:4;stroke-dasharray:none" />
     <path
    fill="none"
    stroke="#000000"
@@ -79,7 +81,7 @@
    stroke-width="100"
    stroke-linejoin="round"
    d="m 1635,2050 614,-614 614,614 -614,614 z"
-   style="stroke-width:108.70173715;stroke-miterlimit:4;stroke-dasharray:none" />
+   style="stroke-width:108.702;stroke-miterlimit:4;stroke-dasharray:none" />
     <rect
    fill="none"
    stroke="none"
@@ -88,11 +90,11 @@
    width="1228"
    height="1228"
    id="rect10"
-   style="stroke-width:108.70173715;stroke-miterlimit:4;stroke-dasharray:none" />
+   style="stroke-width:108.702;stroke-miterlimit:4;stroke-dasharray:none" />
    </g>
    <g
    id="g17"
-   style="stroke-width:108.70173715;stroke-miterlimit:4;stroke-dasharray:none">
+   style="stroke-width:108.702;stroke-miterlimit:4;stroke-dasharray:none">
     <path
    fill="none"
    stroke="#000000"
@@ -100,7 +102,7 @@
    stroke-width="100"
    stroke-linejoin="round"
    d="m 1398,2051 851,-851 852,851 -852,852 z"
-   style="stroke-width:108.70173715;stroke-miterlimit:4;stroke-dasharray:none" />
+   style="stroke-width:108.702;stroke-miterlimit:4;stroke-dasharray:none" />
     <rect
    fill="none"
    stroke="none"
@@ -109,7 +111,7 @@
    width="1703"
    height="1703"
    id="rect15"
-   style="stroke-width:108.70173715;stroke-miterlimit:4;stroke-dasharray:none" />
+   style="stroke-width:108.702;stroke-miterlimit:4;stroke-dasharray:none" />
    </g>
   </g>
  </g>

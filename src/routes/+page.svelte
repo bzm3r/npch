@@ -1,6 +1,6 @@
 <script>
 	import CharacterSummary from './CharacterSummary.svelte';
-	import SelectBoxes from './SelectBoxes.svelte';
+	import CharacterSelect from './CharacterSelect.svelte';
 	import './styles.css';
 
 	let race = '';
@@ -18,11 +18,44 @@
 	<img class="header-pic" src="/assets/header.webp" alt="city on a planet's darkside" height=350px>
 </div> -->
 
-<SelectBoxes bind:race bind:class1 bind:class2 bind:class3 />
+<div class="main_container">
+	<div class="character_select">
+		<CharacterSelect bind:race bind:class1 bind:class2 bind:class3 />
+	</div>
 
-<CharacterSummary {race} {class1} {class2} {class3} />
+	<div class="character_summary">
+		<CharacterSummary {race} {class1} {class2} {class3} />
+	</div>
+</div>
 
-<!-- <style>
+<style>
+	.main_container {
+		width: 25rem;
+		display: grid;
+		grid-auto-flow: row;
+		margin: 0 auto;
+		justify-items: center;
+		/* border-color: black;
+		border-width: 1px;
+		border-style: solid; */
+	}
+
+	.character_select {
+		width: 100%;
+		grid-area: 'character_select';
+		/* border-color: red;
+		border-width: 1px;
+		border-style: solid; */
+	}
+
+	.character_summary {
+		width: 100%;
+		grid-area: 'character_summary';
+		/* border-color: blue;
+		border-width: 1px;
+		border-style: solid; */
+	}
+
 	/* .header-img {
 		display: flex;
 		align-items: center;
@@ -31,4 +64,4 @@
 	.header-img::before {
 		background: linear-gradient(to bottom, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 1.0));	
 	} */
-</style> -->
+</style>

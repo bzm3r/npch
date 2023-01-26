@@ -29,28 +29,19 @@
 <style>
 	.container {
 		display: grid;
-		grid-template-columns: auto;
-		grid-template-rows: auto;
-		grid-template-areas:
-			'primaries1'
-			'primaries2'
-			'charges_and_glands'
-			'specials';
+		grid-auto-flow: row;
+		grid-template-areas: 'primaries1' 'primaries2' 'charges_and_glands' 'specials';
 	}
 	.primaries1 {
-		justify-self: center;
 		grid-area: primaries1;
 	}
 	.primaries2 {
-		justify-self: center;
 		grid-area: primaries2;
 	}
 	.charges_and_glands {
-		justify-self: center;
 		grid-area: charges_and_glands;
 	}
 	.specials {
-		justify-self: center;
 		grid-area: specials;
 	}
 </style>

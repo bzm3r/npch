@@ -17,12 +17,12 @@
 
 <style>
 	select {
-		width: 200px;
+		width: 50%;
 	}
 	.human_academic {
 		border-color: black;
-		border-width: 5px;
+		border-width: 0.3rem;
 		border-style: solid;
-		border-radius: 2px;
+		border-radius: 0.2rem;
 	}
 </style>

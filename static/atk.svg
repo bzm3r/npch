@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    version="1.2"
-   width="13.229132mm"
-   height="13.229167mm"
-   viewBox="0 0 1322.9132 1322.9167"
+   width="15.874958mm"
+   height="15.875001mm"
+   viewBox="0 0 1587.4958 1587.5001"
    preserveAspectRatio="xMidYMid"
    fill-rule="evenodd"
    stroke-width="28.222"
@@ -11,7 +11,7 @@
    xml:space="preserve"
    id="svg13"
    sodipodi:docname="atk.svg"
-   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -30,19 +30,21 @@
    fit-margin-left="0"
    fit-margin-right="0"
    fit-margin-bottom="0"
-   inkscape:zoom="15.406357"
-   inkscape:cx="18.401495"
-   inkscape:cy="21.225004"
-   inkscape:window-width="2560"
-   inkscape:window-height="1400"
-   inkscape:window-x="-12"
-   inkscape:window-y="-12"
+   inkscape:zoom="10.89394"
+   inkscape:cx="3.1668984"
+   inkscape:cy="24.417246"
+   inkscape:window-width="1920"
+   inkscape:window-height="1046"
+   inkscape:window-x="-11"
+   inkscape:window-y="-11"
    inkscape:window-maximized="1"
-   inkscape:current-layer="svg13" />
+   inkscape:current-layer="svg13"
+   inkscape:showpageshadow="2"
+   inkscape:deskcolor="#d1d1d1" />
  <g
    visibility="visible"
    id="MasterSlide_1_Default"
-   transform="translate(-1463.1893,-1363.2314)">
+   transform="translate(-1463.1893,-1363.2315)">
   <desc
    id="desc2">Master slide
   </desc>
@@ -58,7 +60,7 @@
  <g
    visibility="visible"
    id="Slide_1_page1"
-   transform="matrix(1.0636885,0,0,1.0636913,-1555.8021,-1449.437)"
+   transform="matrix(1.2764262,0,0,1.2764296,-1866.9625,-1739.3245)"
    style="stroke-width:74.7044;stroke-miterlimit:4;stroke-dasharray:none">
   <g
    id="g10"

@@ -14,7 +14,7 @@
 	$: human_academic_style = race === 'Human-Academic' ? 'human_academic' : '';
 </script>
 
-<div class="container">
+<div class="selection_boxes">
 	<SelectBox
 		bind:selected={race}
 		name="race-select"
@@ -32,9 +32,9 @@
 </div>
 
 <style>
-	.container {
+	.selection_boxes {
 		display: grid;
-		grid-template-rows: repeat(4, 1fr);
-		justify-content: center;
+		grid-auto-flow: row;
+		justify-items: center;
 	}
 </style>
