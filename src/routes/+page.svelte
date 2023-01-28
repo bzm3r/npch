@@ -1,7 +1,9 @@
 <script>
+	import './styles.css';
+
 	import CharacterSummary from './CharacterSummary.svelte';
 	import CharacterSelect from './CharacterSelect.svelte';
-	import './styles.css';
+	import PrintButton from './PrintButton.svelte';
 
 	let race = '';
 	let class1 = '';
@@ -25,6 +27,10 @@
 
 	<div class="character_summary">
 		<CharacterSummary {race} {class1} {class2} {class3} />
+	</div>
+
+	<div class="print_button">
+		<PrintButton {race} {class1} {class2} {class3} />
 	</div>
 </div>
 

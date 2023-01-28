@@ -22,6 +22,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"d3-dsv": "^3.0.1"
+		"d3-dsv": "^3.0.1",
+		"pdf-lib": "^1.17.1"
 	}
 }
