@@ -36,7 +36,7 @@
 
 <style>
 	.main_container {
-		width: 25rem;
+		width: 20rem;
 		display: grid;
 		grid-auto-flow: row;
 		margin: 0 auto;
