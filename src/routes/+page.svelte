@@ -40,6 +40,7 @@
 		display: grid;
 		grid-auto-flow: row;
 		margin: 0 auto;
+		justify-content: center;
 		justify-items: center;
 		/* border-color: black;
 		border-width: 1px;
