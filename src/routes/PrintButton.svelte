@@ -9,7 +9,7 @@
 	import { PDFDocument } from 'pdf-lib';
 
 	async function load_pdf(description) {
-		const res = await fetch('/' + description + '.pdf');
+		const res = await fetch(encodeURIComponent('/' + description + '.pdf'));
 		let pdf_buffer = await res.arrayBuffer();
 		let pdf = await PDFDocument.load(pdf_buffer);
 		return pdf;
@@ -80,7 +80,7 @@
 		var blob = new Blob([pdf_bytes], { type: 'application/pdf' });
 		const url = URL.createObjectURL(blob);
 		const link = document.createElement('a');
-		link.download = pdf_name;
+		link.download = pdf_name.replaceAll('#', '').replaceAll(' ', '');
 		link.href = url;
 		link.click();
 		URL.revokeObjectURL(url);
