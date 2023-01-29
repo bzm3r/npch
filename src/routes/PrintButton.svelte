@@ -76,15 +76,16 @@
 		save_pdf(pdf_bytes, pdf_name);
 	}
 
-	function save_pdf(pdf_bytes, pdf_name) {
-		var blob = new Blob([pdf_bytes], { type: 'application/pdf' });
-		const url = URL.createObjectURL(blob);
-		const link = document.createElement('a');
-		link.download = pdf_name.replaceAll('#', '').replaceAll(' ', '');
-		link.href = url;
-		link.click();
-		URL.revokeObjectURL(url);
-	}
+    function save_pdf(pdf_bytes, pdf_name) {
+        var blob = new Blob([pdf_bytes], { type: 'application/pdf' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.download = pdf_name.replaceAll('#', '').replaceAll(' ', '');
+        link.target = '_blank';
+        link.href = url;
+        link.click();
+        URL.revokeObjectURL(url);
+    }
 
 	async function handleClick() {
 		disabled = true;
