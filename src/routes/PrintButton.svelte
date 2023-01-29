@@ -97,6 +97,10 @@
 			create_character_sheets();
 		} finally {
 			print_message = 'PDF Sent!';
+			await setTimeout(() => {
+				disabled = false;
+				print_message = 'Print to PDF';
+			}, 4000);
 		}
 	}
 </script>
