@@ -32,6 +32,10 @@
 	<div class="print_button">
 		<PrintButton {race} {class1} {class2} {class3} />
 	</div>
+
+	<div class="other_links">
+		<a href="https://github.com/bzm3r/npch/issues">Report issues</a>
+	</div>
 </div>
 
 <style>
@@ -41,6 +45,7 @@
 		margin: 0 auto;
 		justify-content: center;
 		justify-items: center;
+		row-gap: 1rem;
 		/* border-color: black;
 		border-width: 1px;
 		border-style: solid; */
