@@ -45,7 +45,7 @@
 		margin: 0 auto;
 		justify-content: center;
 		justify-items: center;
-		row-gap: 1rem;
+		row-gap: 0.5rem;
 		/* border-color: black;
 		border-width: 1px;
 		border-style: solid; */
