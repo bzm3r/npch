@@ -36,7 +36,6 @@
 
 <style>
 	.main_container {
-		width: 20rem;
 		display: grid;
 		grid-auto-flow: row;
 		margin: 0 auto;
@@ -48,7 +47,7 @@
 	}
 
 	.character_select {
-		width: 20rem;
+		width: 25rem;
 		grid-area: 'character_select';
 		/* border-color: red;
 		border-width: 1px;
