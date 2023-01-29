@@ -1,8 +1,8 @@
 <script>
 	import { all_labels, primaries3, races, classes } from './CharacterData.svelte';
 	import Primaries from './Primaries.svelte';
-	import Secondaries from './Secondaries.svelte';
-	import Specials from './Specials.svelte';
+	import Skills from './Skills.svelte';
+	import Other from './Other.svelte';
 	import Tabs from './Tabs.svelte';
 	import Tab from './Tab.svelte';
 
@@ -72,31 +72,25 @@
 		c2_dat,
 		c3_dat
 	);
-	
+
 	$: tabs = [
 		{
+			id: 1,
+			title: 'Skills',
+			component: Skills,
+			inputs: { totals: totals, specials: skill_specials }
+		},
+		{
 			id: 0,
-			title: 'Primaries',
+			title: 'Stats',
 			component: Primaries,
 			inputs: { totals: totals, specials: primary_specials }
 		},
 		{
-			id: 1,
-			title: 'Secondaries',
-			component: Secondaries,
-			inputs: { totals: totals, specials: skill_specials }
-		},
-		{
 			id: 2,
-			title: 'Specials',
-			component: Specials,
-			inputs: { specials: flavor_specials }
-		},
-		{
-			id: 3,
-			title: 'Equipment',
-			component: Specials,
-			inputs: { specials: equipment }
+			title: 'Other',
+			component: Other,
+			inputs: { flavor_specials: flavor_specials, equipment: equipment }
 		}
 	];
 </script>

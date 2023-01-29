@@ -48,7 +48,7 @@
 	}
 
 	.character_select {
-		width: 100%;
+		width: 20rem;
 		grid-area: 'character_select';
 		/* border-color: red;
 		border-width: 1px;
@@ -56,7 +56,7 @@
 	}
 
 	.character_summary {
-		width: 100%;
+		width: 20rem;
 		grid-area: 'character_summary';
 		/* border-color: blue;
 		border-width: 1px;

@@ -1,6 +1,6 @@
 <script>
 	import { physicals, socials, knowledges, practicals } from './CharacterData.svelte';
-	import SecondariesTable from './SecondariesTable.svelte';
+	import SkillTable from './SkillTable.svelte';
 	import Specials from './Specials.svelte';
 	export let totals;
 	export let specials;
@@ -8,16 +8,16 @@
 
 <div class="container">
 	<div class="physicals">
-		<SecondariesTable labels={physicals} {totals} />
+		<SkillTable labels={physicals} {totals} />
 	</div>
 	<div class="socials">
-		<SecondariesTable labels={socials} {totals} />
+		<SkillTable labels={socials} {totals} />
 	</div>
 	<div class="knowledges">
-		<SecondariesTable labels={knowledges} {totals} />
+		<SkillTable labels={knowledges} {totals} />
 	</div>
 	<div class="practicals">
-		<SecondariesTable labels={practicals} {totals} />
+		<SkillTable labels={practicals} {totals} />
 	</div>
 	<div class="specials">
 		<Specials {specials} />
