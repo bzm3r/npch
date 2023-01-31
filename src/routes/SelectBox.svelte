@@ -14,8 +14,9 @@
 
 <style>
 	select {
-		width: 50%;
+		width: 11rem;
 	}
+
 	.human_academic {
 		border-color: black;
 		border-width: 0.3rem;

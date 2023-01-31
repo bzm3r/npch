@@ -1,5 +1,5 @@
 <script>
-	import { all_labels, primaries3, races, classes } from './CharacterData.svelte';
+	import { all_labels, miscellaneous, races, classes } from './CharacterData.svelte';
 	import Primaries from './Primaries.svelte';
 	import Skills from './Skills.svelte';
 	import Other from './Other.svelte';
@@ -24,7 +24,7 @@
 				totals[label] += r_dat[label];
 			}
 			if (c1_dat != null) {
-				if (r_dat != null && r_dat.title === 'Human-Academic' && !primaries3.includes(label)) {
+				if (r_dat != null && r_dat.title === 'Human-Academic' && !miscellaneous.includes(label)) {
 					totals[label] += 2 * c1_dat[label];
 				} else {
 					totals[label] += c1_dat[label];
