@@ -118,9 +118,7 @@
 	$: checkCompatibility(selectBoxDefns);
 
 	$: human_academic_style = selectBoxDefns.r.value === 'Human-Academic' ? 'human_academic' : '';
-	$: [race, class1, class2, class3] = Object.values(selectBoxDefns).map((x) =>
-		x.error.any() ? '' : x.value
-	);
+	$: [race, class1, class2, class3] = Object.values(selectBoxDefns).map((x) => x.value);
 </script>
 
 <div class="selection_boxes">
@@ -159,7 +157,7 @@
 	{/each}
 </div>
 
-{#if Object.values(selectBoxDefns).some((x) => x.error.biotechIssue || x.error.duplicateIssue)}
+<!-- {#if Object.values(selectBoxDefns).some((x) => x.error.biotechIssue || x.error.duplicateIssue)}
 	<div class="dummy" />
 	<div class="warnings">
 		<b>Warnings: </b>
@@ -187,8 +185,7 @@
 		</ul>
 	</div>
 	<div class="dummy" />
-{/if}
-
+{/if} -->
 <style>
 	.selection_boxes {
 		display: grid;
