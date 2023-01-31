@@ -6,10 +6,7 @@
 </script>
 
 <select bind:value={selected} {name} id={name} class={html_class}>
-	{#if selected != ''}
-		<option value="" />
-	{/if}
-	<option value={selected}>{selected}</option>
+	<option value="" />
 	{#each choices as choice}
 		<option value={choice}>{choice}</option>
 	{/each}

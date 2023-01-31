@@ -7,28 +7,45 @@
 	export let class2 = '';
 	export let class3 = '';
 
-	$: selectable_races = race_titles.filter((race_title) => race_title != race);
-	$: selectable_classes = class_titles.filter(
-		(class_title) => class_title != class1 && class_title != class2 && class_title != class3
-	);
-	$: human_academic_style = race === 'Human-Academic' ? 'human_academic' : '';
+	let selectBoxDefns = {
+		r: {
+			name: 'race-select',
+			binding: '',
+			choices: race_titles,
+			humanAcademicSensitive: true
+		},
+		c1: {
+			name: 'c1-select',
+			binding: '',
+			choices: class_titles,
+			humanAcademicSensitive: true
+		},
+		c2: {
+			name: 'c2-select',
+			binding: '',
+			choices: class_titles,
+			humanAcademicSensitive: false
+		},
+		c3: {
+			name: 'c3-select',
+			binding: '',
+			choices: class_titles,
+			humanAcademicSensitive: false
+		}
+	};
+	$: human_academic_style = selectBoxDefns.r.binding === 'Human-Academic' ? 'human_academic' : '';
+	$: [race, class1, class2, class3] = Object.values(selectBoxDefns).map((x) => x.binding);
 </script>
 
 <div class="selection_boxes">
-	<SelectBox
-		bind:selected={race}
-		name="race-select"
-		choices={selectable_races}
-		html_class={human_academic_style}
-	/>
-	<SelectBox
-		bind:selected={class1}
-		name="c1-select"
-		choices={selectable_classes}
-		html_class={human_academic_style}
-	/>
-	<SelectBox bind:selected={class2} name="c2-select" choices={selectable_classes} />
-	<SelectBox bind:selected={class3} name="c3-select" choices={selectable_classes} />
+	{#each Object.keys(selectBoxDefns) as key}
+		<SelectBox
+			bind:selected={selectBoxDefns[key].binding}
+			name={selectBoxDefns[key].name}
+			choices={selectBoxDefns[key].choices}
+			html_class={selectBoxDefns[key].humanAcademicSensitive ? human_academic_style : ''}
+		/>
+	{/each}
 </div>
 
 <style>
