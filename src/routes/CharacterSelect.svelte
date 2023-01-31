@@ -194,7 +194,7 @@
 		grid-template-areas: repeat(4, 'dummy select-box issue-icons') 'dummy warnings dummy';
 		justify-self: center;
 		justify-content: center;
-		justify-items: center;
+		column-gap: 0.5em;
 	}
 
 	.biotech-issue-icon {
