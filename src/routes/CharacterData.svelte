@@ -4,7 +4,7 @@
 
 	export const primaries1 = ['hp', 'atk', 'def', 'init'];
 	export const primaries2 = ['skl', 'will', 'ref', 'fort'];
-	export const primaries3 = ['Charges', 'Glands'];
+	export const miscellaneous = ['Robotic', 'Charges', 'Glands'];
 	export const physicals = [
 		'Agility',
 		'Dexterity',
@@ -36,7 +36,7 @@
 
 	export const all_labels = primaries1
 		.concat(primaries2)
-		.concat(primaries3)
+		.concat(miscellaneous)
 		.concat(physicals)
 		.concat(socials)
 		.concat(knowledges)
@@ -63,7 +63,7 @@
 		}
 	}
 
-	class SpecializationData {
+	class RowData {
 		constructor(raw_data) {
 			this.title = raw_data.title;
 			this.type = raw_data.type;
@@ -81,7 +81,7 @@
 	}
 
 	for (const data_row of input_data.values()) {
-		let spec_dat = new SpecializationData(data_row);
+		let spec_dat = new RowData(data_row);
 		if (spec_dat.type === 'race') {
 			races.set(spec_dat.title, spec_dat);
 		} else if (spec_dat.type === 'class') {
@@ -89,6 +89,6 @@
 		}
 	}
 
-	export let race_titles = [...races.keys()];
-	export let class_titles = [...classes.keys()];
+	export let raceTitles = [...races.keys()];
+	export let classTitles = [...classes.keys()];
 </script>
