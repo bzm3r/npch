@@ -1,7 +1,9 @@
 <script>
 	export let text;
 	export let icon;
+
 	let src = '/' + icon + '.svg';
+
 	let iconY = {
 		atk: 65,
 		def: 60,

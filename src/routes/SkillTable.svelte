@@ -7,7 +7,7 @@
 	{#each labels as label}
 		<tr>
 			<th>{label}</th>
-			<td>{totals[label]}</td>
+			<td>{totals[label].total}</td>
 		</tr>
 	{/each}
 </table>
