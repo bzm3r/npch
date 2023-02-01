@@ -7,8 +7,8 @@
 	export let totals;
 	export let specials;
 
-	$: total_charges = totals['Charges'] > 0 ? totals['Charges'] : 0;
-	$: total_glands = totals['Glands'] > 0 ? totals['Glands'] + 1 : 0;
+	$: total_charges = totals['Charges'].total > 0 ? totals['Charges'].total : 0;
+	$: total_glands = totals['Glands'].total > 0 ? totals['Glands'].total + 1 : 0;
 </script>
 
 <div class="container">

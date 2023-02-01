@@ -7,7 +7,7 @@
 
 <div class="container">
 	{#each primaries as primary}
-		<IconText icon={primary} text={totals[primary]} />
+		<IconText icon={primary} text={totals[primary].total} />
 	{/each}
 </div>
 

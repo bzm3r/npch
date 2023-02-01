@@ -16,31 +16,54 @@
 	$: c2_dat = class2 != '' ? classes.get(class2) : null;
 	$: c3_dat = class3 != '' ? classes.get(class3) : null;
 
-	function calculateTotals(r_dat, c1_dat, c2_dat, c3_dat) {
+	class Partial {
+		constructor(sources, value) {
+			this.sources = sources;
+			this.value = value;
+		}
+	}
+
+	class Total {
+		constructor() {
+			this.partials = [];
+			this.total = 0;
+		}
+
+		recalculateTotal() {
+			this.total = this.partials.reduce((partialSum, x) => partialSum + x.value, 0);
+		}
+
+		add(sources, value) {
+			this.partials.push(new Partial(sources, value));
+			this.total += value;
+		}
+	}
+
+	function updateTotals(r_dat, c1_dat, c2_dat, c3_dat) {
 		let totals = new Map();
 		for (const label of all_labels) {
-			totals[label] = 0;
+			totals[label] = new Total();
 			if (r_dat != null) {
-				totals[label] += r_dat[label];
+				totals[label].add([r_dat.title], r_dat[label]);
 			}
 			if (c1_dat != null) {
 				if (r_dat != null && r_dat.title === 'Human-Academic' && !miscellaneous.includes(label)) {
-					totals[label] += 2 * c1_dat[label];
+					totals[label].add([c1_dat.title, r_dat.title + " x2 bonus"], 2 * c1_dat[label]);
 				} else {
-					totals[label] += c1_dat[label];
+					totals[label].add([c1_dat.title], c1_dat[label]);
 				}
 			}
 			if (c2_dat != null) {
-				totals[label] += c2_dat[label];
+				totals[label].add([c2_dat.title], c2_dat[label]);
 			}
 			if (c3_dat != null) {
-				totals[label] += c3_dat[label];
+				totals[label].add([c3_dat.title], c3_dat[label]);
 			}
 		}
 		return totals;
 	}
 
-	$: totals = calculateTotals(r_dat, c1_dat, c2_dat, c3_dat);
+	$: totals = updateTotals(r_dat, c1_dat, c2_dat, c3_dat);
 
 	function getSpecials(r_dat, c1_dat, c2_dat, c3_dat) {
 		let primary_specials = [];
