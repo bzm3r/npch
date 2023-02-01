@@ -191,7 +191,7 @@
 		display: grid;
 		grid-auto-flow: row;
 		grid-template-columns: 5rem 11rem 5rem;
-		grid-template-areas: repeat(4, 'dummy select-box issue-icons') 'dummy warnings dummy';
+		grid-template-areas: repeat(4, 'dummy select-box issue-icons');
 		justify-self: center;
 		justify-content: center;
 		column-gap: 0.5em;
