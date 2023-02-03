@@ -1,5 +1,4 @@
 <script>
-	import { error } from 'pdf-lib';
 	import { classTitles, raceTitles, races, classes } from './CharacterData.svelte';
 	import SelectBox from './SelectBox.svelte';
 
@@ -7,6 +6,7 @@
 	export let class1 = '';
 	export let class2 = '';
 	export let class3 = '';
+	// export let currentBreakdown = null;
 
 	class CompatibilityError {
 		constructor() {
@@ -119,6 +119,7 @@
 
 	$: human_academic_style = selectBoxDefns.r.value === 'Human-Academic' ? 'human_academic' : '';
 	$: [race, class1, class2, class3] = Object.values(selectBoxDefns).map((x) => x.value);
+	// $: breakdownText = $currentBreakdown != null ? '' : '';
 </script>
 
 <div class="selection_boxes">
@@ -156,6 +157,7 @@
 		</div>
 	{/each}
 </div>
+<!-- <div>{breakdownText}</div> -->
 
 <!-- {#if Object.values(selectBoxDefns).some((x) => x.error.biotechIssue || x.error.duplicateIssue)}
 	<div class="dummy" />
