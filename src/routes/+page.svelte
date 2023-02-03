@@ -9,6 +9,12 @@
 	let class1 = '';
 	let class2 = '';
 	let class3 = '';
+
+	import { setContext } from 'svelte';
+	import { writable } from 'svelte/store';
+
+	const currentBreakdown = writable(null);
+	setContext('currentBreakdown', currentBreakdown);
 </script>
 
 <svelte:head>

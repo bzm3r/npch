@@ -24,7 +24,8 @@
 	}
 
 	class Total {
-		constructor() {
+		constructor(id) {
+			this.id = id;
 			this.partials = [];
 			this.total = 0;
 		}
@@ -42,13 +43,13 @@
 	function updateTotals(r_dat, c1_dat, c2_dat, c3_dat) {
 		let totals = new Map();
 		for (const label of all_labels) {
-			totals[label] = new Total();
+			totals[label] = new Total(label);
 			if (r_dat != null) {
 				totals[label].add([r_dat.title], r_dat[label]);
 			}
 			if (c1_dat != null) {
 				if (r_dat != null && r_dat.title === 'Human-Academic' && !miscellaneous.includes(label)) {
-					totals[label].add([c1_dat.title, r_dat.title + " x2 bonus"], 2 * c1_dat[label]);
+					totals[label].add([c1_dat.title, r_dat.title + ' x2 bonus'], 2 * c1_dat[label]);
 				} else {
 					totals[label].add([c1_dat.title], c1_dat[label]);
 				}
