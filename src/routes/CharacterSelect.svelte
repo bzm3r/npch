@@ -6,7 +6,6 @@
 	export let class1 = '';
 	export let class2 = '';
 	export let class3 = '';
-	// export let currentBreakdown = null;
 
 	class CompatibilityError {
 		constructor() {
@@ -119,7 +118,18 @@
 
 	$: human_academic_style = selectBoxDefns.r.value === 'Human-Academic' ? 'human_academic' : '';
 	$: [race, class1, class2, class3] = Object.values(selectBoxDefns).map((x) => x.value);
-	// $: breakdownText = $currentBreakdown != null ? '' : '';
+
+	import { getContext } from 'svelte';
+	const currentBreakdown = getContext('currentBreakdown');
+	$: breakdownText = $currentBreakdown
+		? $currentBreakdown.partials
+				.map((partial) => {
+					console.log(partial.sources.join(' * '));
+					return partial.sources.join(' * ') + ': ' + partial.value;
+					// partial.sources.map((sources) => sources.join(' + ')).join(' * ') + ': ' + partial.value;
+				})
+				.join('; ')
+		: 'empty';
 </script>
 
 <div class="selection_boxes">
@@ -157,7 +167,7 @@
 		</div>
 	{/each}
 </div>
-<!-- <div>{breakdownText}</div> -->
+<div>breakdown: {breakdownText}</div>
 
 <!-- {#if Object.values(selectBoxDefns).some((x) => x.error.biotechIssue || x.error.duplicateIssue)}
 	<div class="dummy" />
