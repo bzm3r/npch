@@ -35,8 +35,10 @@
 		}
 
 		add(sources, value) {
-			this.partials.push(new Partial(sources, value));
-			this.total += value;
+			if (value > 0) {
+				this.partials.push(new Partial(sources, value));
+				this.total += value;
+			}
 		}
 	}
 
