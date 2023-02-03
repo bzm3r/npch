@@ -1,8 +1,21 @@
 <script>
-	export let text;
-	export let icon;
+	export let value;
+	export let id;
 
-	let src = '/' + icon + '.svg';
+	import { getContext } from 'svelte';
+	const currentFocus = getContext('currentFocus');
+
+	function handleClick() {
+		if ($currentFocus === id) {
+			$currentFocus = '';
+		} else {
+			$currentFocus = id;
+		}
+	}
+
+	$: focusedText = $currentFocus === id ? ' focused' : '';
+
+	let src = '/' + id + '.svg';
 
 	let iconY = {
 		atk: 65,
@@ -26,15 +39,15 @@
 	};
 </script>
 
-<div class="icon">
-	<img class="iconImage" {src} alt={icon} title={icon} />
-	<div class="iconText" style:--y="-{iconY[icon]}%" style:--x="-{iconX[icon]}%">
-		{text}
+<div class="iconWithValue" on:click={handleClick} on:keypress={handleClick}>
+	<img class={'iconImage' + focusedText} {src} alt={id + focusedText} title={id} />
+	<div class="iconValue" style:--y="-{iconY[id]}%" style:--x="-{iconX[id]}%">
+		{value}
 	</div>
 </div>
 
 <style>
-	.icon {
+	.iconWithValue {
 		position: relative;
 		text-align: center;
 		color: black;
@@ -44,12 +57,16 @@
 		z-index: 0;
 	}
 
-	.iconText {
+	.iconValue {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(var(--x), var(--y));
 		z-index: 1;
 		font-weight: bold;
+	}
+
+	.focused {
+		background-color: gold;
 	}
 </style>

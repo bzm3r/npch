@@ -7,6 +7,15 @@
 	export let totals;
 	export let specials;
 
+	import { setContext } from 'svelte';
+	import { writable } from 'svelte/store';
+
+	const currentFocus = writable('');
+
+	setContext('currentFocus', currentFocus);
+
+	const currentBreakdown = writable(null);
+
 	$: total_charges = totals['Charges'].total > 0 ? totals['Charges'].total : 0;
 	$: total_glands = totals['Glands'].total > 0 ? totals['Glands'].total + 1 : 0;
 </script>
