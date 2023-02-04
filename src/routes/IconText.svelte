@@ -39,18 +39,26 @@
 	};
 </script>
 
-<div class="iconWithValue" on:click={handleClick} on:keypress={handleClick}>
+<button class="iconButton" on:click={handleClick} on:keypress={handleClick}>
+	<p class="screen-reader-description">{id}</p>
 	<img class={'iconImage' + focusedText} {src} alt={id + focusedText} title={id} />
 	<div class="iconValue" style:--y="-{iconY[id]}%" style:--x="-{iconX[id]}%">
 		{value}
 	</div>
-</div>
+</button>
 
 <style>
-	.iconWithValue {
+	.iconButton {
+		outline: none;
+		background-color: transparent;
+		border: 0cap;
 		position: relative;
 		text-align: center;
 		color: black;
+	}
+
+	button:active {
+		background-color: transparent;
 	}
 
 	.iconImage {
@@ -68,5 +76,17 @@
 
 	.focused {
 		background-color: gold;
+	}
+
+	.screen-reader-description {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
 	}
 </style>
