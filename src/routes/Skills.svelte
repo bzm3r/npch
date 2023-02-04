@@ -14,7 +14,19 @@
 	setContext('currentFocus', currentFocus);
 
 	const currentBreakdown = getContext('currentBreakdown');
-	$: $currentBreakdown = $currentFocus != '' ? totals[$currentFocus] : null;
+	function fetchBreakdown(id) {
+		if (id) {
+			let breakdown = totals[id];
+			if (!breakdown) {
+				return specials.find((special) => special.special_id === id);
+			} else {
+				return breakdown;
+			}
+		} else {
+			return null;
+		}
+	}
+	$: $currentBreakdown = fetchBreakdown($currentFocus);
 </script>
 
 <div class="container">

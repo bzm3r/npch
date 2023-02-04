@@ -1,6 +1,6 @@
 <script>
 	import { all_labels, miscellaneous, races, classes } from './CharacterData.svelte';
-	import Primaries from './Primaries.svelte';
+	import Stats from './Stats.svelte';
 	import Skills from './Skills.svelte';
 	import Other from './Other.svelte';
 	import Tabs from './Tabs.svelte';
@@ -21,10 +21,11 @@
 			this.id = id;
 			this.partials = new Map();
 			this.value = 0;
+			this.special_id = '';
 		}
 
 		addNumeric(source, value) {
-			if (value > 0) {
+			if (value != 0) {
 				this.partials.set(source, value);
 				this.value += value;
 			}
@@ -35,6 +36,16 @@
 				this.partials.set(source, 'special');
 				this.value = special;
 			}
+			this.special_id = [...this.partials.keys()].concat(this.value).join('').replaceAll(' ', '');
+		}
+
+		setSpecialMultiSource(sources, special) {
+			if (special != '') {
+				console.log(sources);
+				sources.forEach((source) => this.partials.set(source, 'special'));
+				this.value = special;
+			}
+			this.special_id = [...this.partials.keys()].concat(this.value).join('').replaceAll(' ', '');
 		}
 	}
 
@@ -43,7 +54,7 @@
 		for (const label of all_labels) {
 			totals[label] = new Breakdown(label);
 			if (r_dat != null) {
-				totals[label].add(r_dat.title, r_dat[label]);
+				totals[label].addNumeric(r_dat.title, r_dat[label]);
 			}
 			if (c1_dat != null) {
 				if (r_dat != null && r_dat.title === 'Human-Academic' && !miscellaneous.includes(label)) {
@@ -65,11 +76,19 @@
 	$: totals = updateTotals(r_dat, c1_dat, c2_dat, c3_dat);
 
 	function createSpecialBreakdowns(source, specials) {
-		return specials.map((special) => {
-			let breakdown = new Breakdown();
-			breakdown.setSpecial(source, special);
-			return breakdown;
-		});
+		if (!Array.isArray(source)) {
+			return specials.map((special) => {
+				let breakdown = new Breakdown('special');
+				breakdown.setSpecial(source, special);
+				return breakdown;
+			});
+		} else {
+			return specials.map((special) => {
+				let breakdown = new Breakdown('special');
+				breakdown.setSpecialMultiSource(source, special);
+				return breakdown;
+			});
+		}
 	}
 
 	function getSpecials(r_dat, c1_dat, c2_dat, c3_dat) {
@@ -88,8 +107,12 @@
 
 		if (r_dat != null && r_dat.title === 'Human-Academic') {
 			if (c1_dat != null) {
-				primary_specials.push(...c1_dat.specials.primary);
-				primary_specials.push(...c1_dat.specials.skill);
+				primary_specials.push(
+					...createSpecialBreakdowns([r_dat.title, c1_dat.title], dat.specials.primary)
+				);
+				skill_specials.push(
+					...createSpecialBreakdowns([r_dat.title, dat.title], dat.specials.skill)
+				);
 			}
 		}
 
@@ -113,7 +136,7 @@
 		{
 			id: 0,
 			title: 'Stats',
-			component: Primaries,
+			component: Stats,
 			inputs: { totals: totals, specials: primary_specials }
 		},
 		{
