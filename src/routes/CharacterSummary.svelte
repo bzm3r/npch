@@ -23,12 +23,8 @@
 			this.total = 0;
 		}
 
-		recalculateTotal() {
-			this.total = this.partials.values().reduce((partialSum, x) => partialSum + x.value, 0);
-		}
-
 		add(source, value) {
-			if (value > 0) {
+			if (value != 0) {
 				this.partials.set(source, value);
 				this.total += value;
 			}
