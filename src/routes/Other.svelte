@@ -3,6 +3,28 @@
 
 	export let flavor_specials;
 	export let equipment;
+
+	import { setContext, getContext } from 'svelte';
+	import { writable } from 'svelte/store';
+
+	const currentFocus = writable('');
+
+	setContext('currentFocus', currentFocus);
+
+	const currentBreakdown = getContext('currentBreakdown');
+	function fetchBreakdown(id) {
+		if (id) {
+			let breakdown = flavor_specials.find((special) => special.special_id === id);
+			if (breakdown) {
+				return breakdown;
+			} else {
+				return equipment.find((special) => special.special_id === id);
+			}
+		} else {
+			return null;
+		}
+	}
+	$: flavor_specials, equipment, ($currentBreakdown = fetchBreakdown($currentFocus));
 </script>
 
 {#if flavor_specials.length > 0}

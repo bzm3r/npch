@@ -1,7 +1,22 @@
 <script>
-	export let text;
-	export let icon;
-	let src = '/' + icon + '.svg';
+	export let value;
+	export let id;
+
+	import { getContext } from 'svelte';
+	const currentFocus = getContext('currentFocus');
+
+	function handleClick() {
+		if ($currentFocus === id) {
+			$currentFocus = '';
+		} else {
+			$currentFocus = id;
+		}
+	}
+
+	$: focusedText = $currentFocus === id ? ' focused' : '';
+
+	let src = '/' + id + '.svg';
+
 	let iconY = {
 		atk: 65,
 		def: 60,
@@ -24,15 +39,19 @@
 	};
 </script>
 
-<div class="icon">
-	<img class="iconImage" {src} alt={icon} title={icon} />
-	<div class="iconText" style:--y="-{iconY[icon]}%" style:--x="-{iconX[icon]}%">
-		{text}
+<div class="iconButton" on:click={handleClick} on:keypress={handleClick}>
+	<p class="screen-reader-description">{id}</p>
+	<img class={'iconImage' + focusedText} {src} alt={id + focusedText} title={id} />
+	<div class="iconValue" style:--y="-{iconY[id]}%" style:--x="-{iconX[id]}%">
+		{value}
 	</div>
 </div>
 
 <style>
-	.icon {
+	.iconButton {
+		outline: none;
+		background-color: transparent;
+		border: 0cap;
 		position: relative;
 		text-align: center;
 		color: black;
@@ -42,12 +61,28 @@
 		z-index: 0;
 	}
 
-	.iconText {
+	.iconValue {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(var(--x), var(--y));
 		z-index: 1;
 		font-weight: bold;
+	}
+
+	.focused {
+		background-color: gold;
+	}
+
+	.screen-reader-description {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
 	}
 </style>

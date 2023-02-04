@@ -1,13 +1,27 @@
 <script>
 	export let totals;
 	export let labels = [];
+
+	import { getContext } from 'svelte';
+	const currentFocus = getContext('currentFocus');
+
+	function handleClick(label) {
+		if ($currentFocus === label) {
+			$currentFocus = '';
+		} else {
+			$currentFocus = label;
+		}
+	}
 </script>
 
 <table>
 	{#each labels as label}
-		<tr>
+		<tr
+			style={$currentFocus === label ? 'background-color: gold;' : ''}
+			on:click={() => handleClick(label)}
+		>
 			<th>{label}</th>
-			<td>{totals[label]}</td>
+			<td>{totals[label].value}</td>
 		</tr>
 	{/each}
 </table>
@@ -24,6 +38,7 @@
 
 	td {
 		text-align: center;
+		width: 10%;
 	}
 
 	th {
@@ -31,6 +46,6 @@
 	}
 
 	tr {
-		width: 10%;
+		height: 1rem;
 	}
 </style>

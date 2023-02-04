@@ -1,7 +1,7 @@
 <script>
-	import { error } from 'pdf-lib';
 	import { classTitles, raceTitles, races, classes } from './CharacterData.svelte';
 	import SelectBox from './SelectBox.svelte';
+	import BreakDownInfo from './BreakDownInfo.svelte';
 
 	export let race = '';
 	export let class1 = '';
@@ -22,7 +22,7 @@
 		}
 	}
 
-	let selectBoxDefns = {
+	$: selectBoxDefns = {
 		r: {
 			name: 'race-select',
 			value: '',
@@ -117,13 +117,37 @@
 
 	$: checkCompatibility(selectBoxDefns);
 
+	import { getContext } from 'svelte';
+	const currentBreakdown = getContext('currentBreakdown');
+
 	$: human_academic_style = selectBoxDefns.r.value === 'Human-Academic' ? 'human_academic' : '';
 	$: [race, class1, class2, class3] = Object.values(selectBoxDefns).map((x) => x.value);
 </script>
 
 <div class="selection_boxes">
 	{#each Object.keys(selectBoxDefns) as key}
-		<div class="dummy" />
+		<div class="issue-area">
+			{#if selectBoxDefns[key].error.biotechIssue}
+				<div class="biotech-issue">
+					<img
+						class="biotech-issue-icon"
+						src="/biotech-issue.svg"
+						alt="robotic races are incompatible with biotech"
+						title="robotic races are incompatible with biotech"
+					/>
+				</div>
+			{/if}
+			{#if selectBoxDefns[key].error.duplicateIssue}
+				<div class="duplicate-issue">
+					<img
+						class="duplicate-issue-icon"
+						src="/duplicate-issue.svg"
+						alt="duplicate of another class"
+						title="duplicate of another class"
+					/>
+				</div>
+			{/if}
+		</div>
 		<div class="select-box">
 			<SelectBox
 				bind:selected={selectBoxDefns[key].value}
@@ -132,91 +156,64 @@
 				html_class={selectBoxDefns[key].humanAcademicSensitive ? human_academic_style : ''}
 			/>
 		</div>
-		<div class="issue-icons">
-			<div class="biotech-issue">
-				{#if selectBoxDefns[key].error.biotechIssue}
-					<img
-						class="biotech-issue-icon"
-						src="/biotech-issue.svg"
-						alt="robotic races are incompatible with biotech"
-						title="robotic races are incompatible with biotech"
+		<div class="info-area">
+			{#if $currentBreakdown && Array.from($currentBreakdown.partials.keys()).includes(selectBoxDefns[key].value)}
+				<div class="breakdown-info">
+					<BreakDownInfo
+						id={$currentBreakdown.id}
+						value={$currentBreakdown.id === 'special'
+							? ''
+							: $currentBreakdown.partials.get(selectBoxDefns[key].value)}
 					/>
-				{/if}
-			</div>
-			<div class="duplicate-issue">
-				{#if selectBoxDefns[key].error.duplicateIssue}
-					<img
-						class="duplicate-issue-icon"
-						src="/duplicate-issue.svg"
-						alt="duplicate of another class"
-						title="duplicate of another class"
-					/>
-				{/if}
-			</div>
+				</div>
+			{/if}
 		</div>
 	{/each}
 </div>
 
-<!-- {#if Object.values(selectBoxDefns).some((x) => x.error.biotechIssue || x.error.duplicateIssue)}
-	<div class="dummy" />
-	<div class="warnings">
-		<b>Warnings: </b>
-		<ul>
-			{#if Object.values(selectBoxDefns).some((x) => x.error.biotechIssue)}
-				<li>
-					<img
-						class="biotech-issue-icon"
-						src="/biotech-issue.svg"
-						alt="robotic races are incompatible with biotech"
-						title="robotic races are incompatible with biotech"
-					/> Robotic races are incompatible with biotech classes
-				</li>
-			{/if}
-			{#if Object.values(selectBoxDefns).some((x) => x.error.duplicateIssue)}
-				<li>
-					<img
-						class="duplicate-issue-icon"
-						src="/duplicate-issue.svg"
-						alt="duplicate of another class"
-						title="duplicate of another class"
-					/> Duplicate of another class
-				</li>
-			{/if}
-		</ul>
-	</div>
-	<div class="dummy" />
-{/if} -->
 <style>
 	.selection_boxes {
 		display: grid;
 		grid-auto-flow: row;
-		grid-template-columns: 5rem 11rem 5rem;
-		grid-template-areas: repeat(4, 'dummy select-box issue-icons');
+		grid-template-columns: 8rem 11rem 8rem;
+		grid-template-areas: repeat(4, 'issue-area select-box info-area');
 		justify-self: center;
 		justify-content: center;
 		column-gap: 0.5em;
 	}
 
 	.biotech-issue-icon {
+		height: 2.5rem;
 		width: 2rem;
-		justify-self: center;
-		justify-content: center;
 	}
+
 	.duplicate-issue-icon {
+		height: 2.5rem;
 		width: 2rem;
 	}
-	.issue-icons {
-		display: grid;
-		grid-auto-flow: row;
-		grid-template-columns: repeat(2, max-content);
+
+	.issue-area {
+		height: 2.5rem;
+		width: 4rem;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		justify-self: end;
+		gap: 0.2rem;
+		grid-area: 'issue-area';
 	}
-	.dummy {
-		grid-area: 'dummy';
-	}
+
 	.select-box {
 		grid-area: 'select-box';
 	}
-	.issue-icons {
-		grid-area: 'issue-icons';
+
+	.info-area {
+		height: 2.5rem;
+		width: 4rem;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 0.2rem;
+		grid-area: 'info-area';
 	}
 </style>

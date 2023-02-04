@@ -1,6 +1,7 @@
 <script>
-	import { physicals, socials, knowledges, practicals } from './CharacterData.svelte';
-	import SkillTable from './SkillTable.svelte';
+	import { primaries1, primaries2 } from './CharacterData.svelte';
+	import StatsRow from './StatsRow.svelte';
+	import ChargesAndGlands from './ChargesAndGlands.svelte';
 	import Specials from './Specials.svelte';
 
 	export let totals;
@@ -14,6 +15,7 @@
 	setContext('currentFocus', currentFocus);
 
 	const currentBreakdown = getContext('currentBreakdown');
+
 	function fetchBreakdown(id) {
 		if (id) {
 			let breakdown = totals[id];
@@ -27,20 +29,20 @@
 		}
 	}
 	$: totals, specials, ($currentBreakdown = fetchBreakdown($currentFocus));
+
+	$: total_charges = totals['Charges'].value > 0 ? totals['Charges'].value : 0;
+	$: total_glands = totals['Glands'].value > 0 ? totals['Glands'].value + 1 : 0;
 </script>
 
 <div class="container">
-	<div class="physicals">
-		<SkillTable labels={physicals} {totals} />
+	<div class="primaries1">
+		<StatsRow primaries={primaries1} {totals} />
 	</div>
-	<div class="socials">
-		<SkillTable labels={socials} {totals} />
+	<div class="primaries2">
+		<StatsRow primaries={primaries2} {totals} />
 	</div>
-	<div class="knowledges">
-		<SkillTable labels={knowledges} {totals} />
-	</div>
-	<div class="practicals">
-		<SkillTable labels={practicals} {totals} />
+	<div class="charges_and_glands">
+		<ChargesAndGlands {total_charges} {total_glands} />
 	</div>
 </div>
 
@@ -51,23 +53,16 @@
 <style>
 	.container {
 		display: grid;
-		grid-template-columns: repeat(2, max-content);
-		gap: 1em;
-		grid-template-areas:
-			'physicals socials'
-			'knowledges practicals';
-		justify-content: center;
+		grid-auto-flow: row;
+		grid-template-areas: 'primaries1' 'primaries2' 'charges_and_glands';
 	}
-	.physicals {
-		grid-area: physicals;
+	.primaries1 {
+		grid-area: primaries1;
 	}
-	.socials {
-		grid-area: socials;
+	.primaries2 {
+		grid-area: primaries2;
 	}
-	.knowledges {
-		grid-area: knowledges;
-	}
-	.practicals {
-		grid-area: practicals;
+	.charges_and_glands {
+		grid-area: charges_and_glands;
 	}
 </style>
