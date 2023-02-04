@@ -8,7 +8,7 @@
 
 	function calculateIconSrc(id) {
 		if (id === 'special') {
-			return '/special-star.svg';
+			return '/dichotomy.svg';
 		} else if (primaries.includes(id)) {
 			return '/' + id + '.svg';
 		} else if (miscellaneous.includes(id)) {
