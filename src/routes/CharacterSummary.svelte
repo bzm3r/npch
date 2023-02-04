@@ -108,10 +108,10 @@
 		if (r_dat != null && r_dat.title === 'Human-Academic') {
 			if (c1_dat != null) {
 				primary_specials.push(
-					...createSpecialBreakdowns([r_dat.title, c1_dat.title], dat.specials.primary)
+					...createSpecialBreakdowns([r_dat.title, c1_dat.title], c1_dat.specials.primary)
 				);
 				skill_specials.push(
-					...createSpecialBreakdowns([r_dat.title, dat.title], dat.specials.skill)
+					...createSpecialBreakdowns([r_dat.title, c1_dat.title], c1_dat.specials.skill)
 				);
 			}
 		}

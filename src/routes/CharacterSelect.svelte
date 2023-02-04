@@ -126,7 +126,28 @@
 
 <div class="selection_boxes">
 	{#each Object.keys(selectBoxDefns) as key}
-		<div class="dummy" />
+		<div class="issue-area">
+			{#if selectBoxDefns[key].error.biotechIssue}
+				<div class="biotech-issue">
+					<img
+						class="biotech-issue-icon"
+						src="/biotech-issue.svg"
+						alt="robotic races are incompatible with biotech"
+						title="robotic races are incompatible with biotech"
+					/>
+				</div>
+			{/if}
+			{#if selectBoxDefns[key].error.duplicateIssue}
+				<div class="duplicate-issue">
+					<img
+						class="duplicate-issue-icon"
+						src="/duplicate-issue.svg"
+						alt="duplicate of another class"
+						title="duplicate of another class"
+					/>
+				</div>
+			{/if}
+		</div>
 		<div class="select-box">
 			<SelectBox
 				bind:selected={selectBoxDefns[key].value}
@@ -136,36 +157,16 @@
 			/>
 		</div>
 		<div class="info-area">
-			<div class="breakdown-info">
-				{#if $currentBreakdown && Array.from($currentBreakdown.partials.keys()).includes(selectBoxDefns[key].value)}
+			{#if $currentBreakdown && Array.from($currentBreakdown.partials.keys()).includes(selectBoxDefns[key].value)}
+				<div class="breakdown-info">
 					<BreakDownInfo
 						id={$currentBreakdown.id}
 						value={$currentBreakdown.id === 'special'
 							? ''
 							: $currentBreakdown.partials.get(selectBoxDefns[key].value)}
 					/>
-				{/if}
-			</div>
-			<div class="biotech-issue">
-				{#if selectBoxDefns[key].error.biotechIssue}
-					<img
-						class="biotech-issue-icon"
-						src="/biotech-issue.svg"
-						alt="robotic races are incompatible with biotech"
-						title="robotic races are incompatible with biotech"
-					/>
-				{/if}
-			</div>
-			<div class="duplicate-issue">
-				{#if selectBoxDefns[key].error.duplicateIssue}
-					<img
-						class="duplicate-issue-icon"
-						src="/duplicate-issue.svg"
-						alt="duplicate of another class"
-						title="duplicate of another class"
-					/>
-				{/if}
-			</div>
+				</div>
+			{/if}
 		</div>
 	{/each}
 </div>
@@ -204,7 +205,7 @@
 		display: grid;
 		grid-auto-flow: row;
 		grid-template-columns: 8rem 11rem 8rem;
-		grid-template-areas: repeat(4, 'dummy select-box info-area');
+		grid-template-areas: repeat(4, 'issue-area select-box info-area');
 		justify-self: center;
 		justify-content: center;
 		column-gap: 0.5em;
@@ -213,7 +214,6 @@
 	.biotech-issue-icon {
 		height: 2.5rem;
 		width: 2rem;
-		justify-content: center;
 	}
 
 	.duplicate-issue-icon {
@@ -221,16 +221,15 @@
 		width: 2rem;
 	}
 
-	.info-area {
+	.issue-area {
 		height: 2.5rem;
 		width: 4rem;
 		display: flex;
 		align-items: center;
+		justify-content: flex-end;
+		justify-self: end;
 		gap: 0.2rem;
-	}
-
-	.dummy {
-		grid-area: 'dummy';
+		grid-area: 'issue-area';
 	}
 
 	.select-box {
@@ -238,6 +237,12 @@
 	}
 
 	.info-area {
+		height: 2.5rem;
+		width: 4rem;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 0.2rem;
 		grid-area: 'info-area';
 	}
 </style>
