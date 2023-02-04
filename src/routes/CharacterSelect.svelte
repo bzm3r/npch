@@ -1,6 +1,7 @@
 <script>
 	import { classTitles, raceTitles, races, classes } from './CharacterData.svelte';
 	import SelectBox from './SelectBox.svelte';
+	import BreakDownInfo from './BreakDownInfo.svelte';
 
 	export let race = '';
 	export let class1 = '';
@@ -121,15 +122,6 @@
 
 	import { getContext } from 'svelte';
 	const currentBreakdown = getContext('currentBreakdown');
-	$: breakdownText = $currentBreakdown
-		? $currentBreakdown.partials
-				.map((partial) => {
-					console.log(partial.sources.join(' * '));
-					return partial.sources.join(' * ') + ': ' + partial.value;
-					// partial.sources.map((sources) => sources.join(' + ')).join(' * ') + ': ' + partial.value;
-				})
-				.join('; ')
-		: 'empty';
 </script>
 
 <div class="selection_boxes">
@@ -143,7 +135,15 @@
 				html_class={selectBoxDefns[key].humanAcademicSensitive ? human_academic_style : ''}
 			/>
 		</div>
-		<div class="issue-icons">
+		<div class="info-area">
+			<div class="breakdown-info">
+				{#if $currentBreakdown && Array.from($currentBreakdown.partials.keys()).includes(selectBoxDefns[key].value)}
+					<BreakDownInfo
+						id={$currentBreakdown.id}
+						value={$currentBreakdown.partials.get(selectBoxDefns[key].value)}
+					/>
+				{/if}
+			</div>
 			<div class="biotech-issue">
 				{#if selectBoxDefns[key].error.biotechIssue}
 					<img
@@ -167,7 +167,6 @@
 		</div>
 	{/each}
 </div>
-<div>breakdown: {breakdownText}</div>
 
 <!-- {#if Object.values(selectBoxDefns).some((x) => x.error.biotechIssue || x.error.duplicateIssue)}
 	<div class="dummy" />
@@ -202,33 +201,41 @@
 	.selection_boxes {
 		display: grid;
 		grid-auto-flow: row;
-		grid-template-columns: 5rem 11rem 5rem;
-		grid-template-areas: repeat(4, 'dummy select-box issue-icons');
+		grid-template-columns: 8rem 11rem 8rem;
+		grid-template-areas: repeat(4, 'dummy select-box info-area');
 		justify-self: center;
 		justify-content: center;
 		column-gap: 0.5em;
 	}
 
 	.biotech-issue-icon {
+		height: 2.5rem;
 		width: 2rem;
-		justify-self: center;
 		justify-content: center;
 	}
+
 	.duplicate-issue-icon {
+		height: 2.5rem;
 		width: 2rem;
 	}
-	.issue-icons {
-		display: grid;
-		grid-auto-flow: row;
-		grid-template-columns: repeat(2, max-content);
+
+	.info-area {
+		height: 2.5rem;
+		width: 4rem;
+		display: flex;
+		align-items: center;
+		gap: 0.2rem;
 	}
+
 	.dummy {
 		grid-area: 'dummy';
 	}
+
 	.select-box {
 		grid-area: 'select-box';
 	}
-	.issue-icons {
-		grid-area: 'issue-icons';
+
+	.info-area {
+		grid-area: 'info-area';
 	}
 </style>

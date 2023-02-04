@@ -15,6 +15,7 @@
 <style>
 	select {
 		width: 11rem;
+		height: 2.5rem;
 	}
 
 	.human_academic {
