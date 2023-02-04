@@ -2,8 +2,19 @@
 	import { physicals, socials, knowledges, practicals } from './CharacterData.svelte';
 	import SkillTable from './SkillTable.svelte';
 	import Specials from './Specials.svelte';
+
 	export let totals;
 	export let specials;
+
+	import { setContext, getContext } from 'svelte';
+	import { writable } from 'svelte/store';
+
+	const currentFocus = writable('');
+
+	setContext('currentFocus', currentFocus);
+
+	const currentBreakdown = getContext('currentBreakdown');
+	$: $currentBreakdown = $currentFocus != '' ? totals[$currentFocus] : null;
 </script>
 
 <div class="container">
