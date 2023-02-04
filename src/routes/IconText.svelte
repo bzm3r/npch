@@ -39,13 +39,13 @@
 	};
 </script>
 
-<button class="iconButton" on:click={handleClick} on:keypress={handleClick}>
+<div class="iconButton" on:click={handleClick} on:keypress={handleClick}>
 	<p class="screen-reader-description">{id}</p>
 	<img class={'iconImage' + focusedText} {src} alt={id + focusedText} title={id} />
 	<div class="iconValue" style:--y="-{iconY[id]}%" style:--x="-{iconX[id]}%">
 		{value}
 	</div>
-</button>
+</div>
 
 <style>
 	.iconButton {
@@ -55,10 +55,6 @@
 		position: relative;
 		text-align: center;
 		color: black;
-	}
-
-	button:active {
-		background-color: transparent;
 	}
 
 	.iconImage {
