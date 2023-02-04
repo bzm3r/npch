@@ -7,7 +7,9 @@
 	let primaries = [...primaries1, ...primaries2];
 
 	function calculateIconSrc(id) {
-		if (primaries.includes(id)) {
+		if (id === 'special') {
+			return '/special-star.svg';
+		} else if (primaries.includes(id)) {
 			return '/' + id + '.svg';
 		} else if (miscellaneous.includes(id)) {
 			if (id === 'Robotic') {

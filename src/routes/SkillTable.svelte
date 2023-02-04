@@ -21,7 +21,7 @@
 			on:click={() => handleClick(label)}
 		>
 			<th>{label}</th>
-			<td>{totals[label].total}</td>
+			<td>{totals[label].value}</td>
 		</tr>
 	{/each}
 </table>

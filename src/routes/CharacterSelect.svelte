@@ -140,7 +140,9 @@
 				{#if $currentBreakdown && Array.from($currentBreakdown.partials.keys()).includes(selectBoxDefns[key].value)}
 					<BreakDownInfo
 						id={$currentBreakdown.id}
-						value={$currentBreakdown.partials.get(selectBoxDefns[key].value)}
+						value={$currentBreakdown.id === 'special'
+							? ''
+							: $currentBreakdown.partials.get(selectBoxDefns[key].value)}
 					/>
 				{/if}
 			</div>

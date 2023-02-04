@@ -1,6 +1,6 @@
 <script>
 	import { primaries1, primaries2 } from './CharacterData.svelte';
-	import PrimariesRow from './PrimariesRow.svelte';
+	import StatsRow from './StatsRow.svelte';
 	import ChargesAndGlands from './ChargesAndGlands.svelte';
 	import Specials from './Specials.svelte';
 
@@ -15,18 +15,30 @@
 	setContext('currentFocus', currentFocus);
 
 	const currentBreakdown = getContext('currentBreakdown');
-	$: $currentBreakdown = $currentFocus != '' ? totals[$currentFocus] : null;
+	function fetchBreakdown(id) {
+		if (id) {
+			let breakdown = totals[id];
+			if (!breakdown) {
+				return specials.find((special) => special.special_id === id);
+			} else {
+				return breakdown;
+			}
+		} else {
+			return null;
+		}
+	}
+	$: $currentBreakdown = fetchBreakdown($currentFocus);
 
-	$: total_charges = totals['Charges'].total > 0 ? totals['Charges'].total : 0;
-	$: total_glands = totals['Glands'].total > 0 ? totals['Glands'].total + 1 : 0;
+	$: total_charges = totals['Charges'].value > 0 ? totals['Charges'].value : 0;
+	$: total_glands = totals['Glands'].value > 0 ? totals['Glands'].value + 1 : 0;
 </script>
 
 <div class="container">
 	<div class="primaries1">
-		<PrimariesRow primaries={primaries1} {totals} />
+		<StatsRow primaries={primaries1} {totals} />
 	</div>
 	<div class="primaries2">
-		<PrimariesRow primaries={primaries2} {totals} />
+		<StatsRow primaries={primaries2} {totals} />
 	</div>
 	<div class="charges_and_glands">
 		<ChargesAndGlands {total_charges} {total_glands} />
