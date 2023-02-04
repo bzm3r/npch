@@ -24,7 +24,7 @@
 			return null;
 		}
 	}
-	$: $currentBreakdown = fetchBreakdown($currentFocus);
+	$: flavor_specials, equipment, ($currentBreakdown = fetchBreakdown($currentFocus));
 </script>
 
 {#if flavor_specials.length > 0}

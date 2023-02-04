@@ -9,17 +9,48 @@
 	const gland_src = '/gland.svg';
 
 	const dummy_size = 60;
+
+	import { getContext } from 'svelte';
+	const currentFocus = getContext('currentFocus');
+
+	function handleClick(id) {
+		if ($currentFocus === id) {
+			$currentFocus = '';
+		} else {
+			$currentFocus = id;
+		}
+	}
 </script>
 
 <div class="container">
 	{#each { length: total_charges } as _}
-		<img class="chargeIcon" src={charge_src} alt="charges" title="charges" width="60" height="60" />
+		<img
+			class={'charge-icon'}
+			src={charge_src}
+			alt="charges"
+			title="charges"
+			width="60"
+			height="60"
+			on:click={() => handleClick('Charges')}
+			on:keydown={() => handleClick('Charges')}
+			style={$currentFocus === 'Charges' ? 'background-color: gold;' : ''}
+		/>
 	{/each}
 	{#each { length: max_icons - total_charges - total_glands } as _}
 		<div class="dummy" style:--dummy_size="{dummy_size}px" />
 	{/each}
 	{#each { length: total_glands } as _}
-		<img class="glandIcon" src={gland_src} alt="glands" title="glands" width="60" height="60" />
+		<img
+			class={'gland-icon'}
+			src={gland_src}
+			alt="glands"
+			title="glands"
+			width="60"
+			height="60"
+			on:click={() => handleClick('Glands')}
+			on:keydown={() => handleClick('Glands')}
+			style={$currentFocus === 'Glands' ? 'background-color: gold;' : ''}
+		/>
 	{/each}
 </div>
 

@@ -22,7 +22,7 @@
 		}
 	}
 
-	let selectBoxDefns = {
+	$: selectBoxDefns = {
 		r: {
 			name: 'race-select',
 			value: '',
@@ -117,11 +117,11 @@
 
 	$: checkCompatibility(selectBoxDefns);
 
-	$: human_academic_style = selectBoxDefns.r.value === 'Human-Academic' ? 'human_academic' : '';
-	$: [race, class1, class2, class3] = Object.values(selectBoxDefns).map((x) => x.value);
-
 	import { getContext } from 'svelte';
 	const currentBreakdown = getContext('currentBreakdown');
+
+	$: human_academic_style = selectBoxDefns.r.value === 'Human-Academic' ? 'human_academic' : '';
+	$: [race, class1, class2, class3] = Object.values(selectBoxDefns).map((x) => x.value);
 </script>
 
 <div class="selection_boxes">
@@ -171,35 +171,6 @@
 	{/each}
 </div>
 
-<!-- {#if Object.values(selectBoxDefns).some((x) => x.error.biotechIssue || x.error.duplicateIssue)}
-	<div class="dummy" />
-	<div class="warnings">
-		<b>Warnings: </b>
-		<ul>
-			{#if Object.values(selectBoxDefns).some((x) => x.error.biotechIssue)}
-				<li>
-					<img
-						class="biotech-issue-icon"
-						src="/biotech-issue.svg"
-						alt="robotic races are incompatible with biotech"
-						title="robotic races are incompatible with biotech"
-					/> Robotic races are incompatible with biotech classes
-				</li>
-			{/if}
-			{#if Object.values(selectBoxDefns).some((x) => x.error.duplicateIssue)}
-				<li>
-					<img
-						class="duplicate-issue-icon"
-						src="/duplicate-issue.svg"
-						alt="duplicate of another class"
-						title="duplicate of another class"
-					/> Duplicate of another class
-				</li>
-			{/if}
-		</ul>
-	</div>
-	<div class="dummy" />
-{/if} -->
 <style>
 	.selection_boxes {
 		display: grid;

@@ -15,7 +15,7 @@
 			if (id === 'Robotic') {
 				return '';
 			} else {
-				return id.substring(0, id.length - 1).toLowerCase();
+				return '/' + id.substring(0, id.length - 1).toLowerCase() + '.svg';
 			}
 		} else {
 			return '';
@@ -23,6 +23,7 @@
 	}
 
 	$: iconSrc = calculateIconSrc(id);
+	$: console.log(id);
 </script>
 
 <div class="container">
@@ -31,7 +32,9 @@
 	{:else}
 		<b class="icon">{id}</b>
 	{/if}
-	<p class="value">{value}</p>
+	{#if id != 'special' && id != 'Charges' && id != 'Glands'}
+		<p class="value">{value}</p>
+	{/if}
 </div>
 
 <style>

@@ -15,6 +15,7 @@
 	setContext('currentFocus', currentFocus);
 
 	const currentBreakdown = getContext('currentBreakdown');
+
 	function fetchBreakdown(id) {
 		if (id) {
 			let breakdown = totals[id];
@@ -27,7 +28,7 @@
 			return null;
 		}
 	}
-	$: $currentBreakdown = fetchBreakdown($currentFocus);
+	$: totals, specials, ($currentBreakdown = fetchBreakdown($currentFocus));
 
 	$: total_charges = totals['Charges'].value > 0 ? totals['Charges'].value : 0;
 	$: total_glands = totals['Glands'].value > 0 ? totals['Glands'].value + 1 : 0;
@@ -43,16 +44,17 @@
 	<div class="charges_and_glands">
 		<ChargesAndGlands {total_charges} {total_glands} />
 	</div>
-	<div class="specials">
-		<Specials {specials} />
-	</div>
+</div>
+
+<div class="specials">
+	<Specials {specials} />
 </div>
 
 <style>
 	.container {
 		display: grid;
 		grid-auto-flow: row;
-		grid-template-areas: 'primaries1' 'primaries2' 'charges_and_glands' 'specials';
+		grid-template-areas: 'primaries1' 'primaries2' 'charges_and_glands';
 	}
 	.primaries1 {
 		grid-area: primaries1;
@@ -62,8 +64,5 @@
 	}
 	.charges_and_glands {
 		grid-area: charges_and_glands;
-	}
-	.specials {
-		grid-area: specials;
 	}
 </style>

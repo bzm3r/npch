@@ -26,7 +26,7 @@
 			return null;
 		}
 	}
-	$: $currentBreakdown = fetchBreakdown($currentFocus);
+	$: totals, specials, ($currentBreakdown = fetchBreakdown($currentFocus));
 </script>
 
 <div class="container">
@@ -42,9 +42,10 @@
 	<div class="practicals">
 		<SkillTable labels={practicals} {totals} />
 	</div>
-	<div class="specials">
-		<Specials {specials} />
-	</div>
+</div>
+
+<div class="specials">
+	<Specials {specials} />
 </div>
 
 <style>
@@ -54,8 +55,7 @@
 		gap: 1em;
 		grid-template-areas:
 			'physicals socials'
-			'knowledges practicals'
-			'specials specials';
+			'knowledges practicals';
 		justify-content: center;
 	}
 	.physicals {
@@ -69,8 +69,5 @@
 	}
 	.practicals {
 		grid-area: practicals;
-	}
-	.specials {
-		grid-area: specials;
 	}
 </style>

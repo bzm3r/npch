@@ -73,8 +73,6 @@
 		return totals;
 	}
 
-	$: totals = updateTotals(r_dat, c1_dat, c2_dat, c3_dat);
-
 	function createSpecialBreakdowns(source, specials) {
 		if (!Array.isArray(source)) {
 			return specials.map((special) => {
@@ -118,6 +116,8 @@
 
 		return [primary_specials, skill_specials, flavor_specials, equipment];
 	}
+
+	$: totals = updateTotals(r_dat, c1_dat, c2_dat, c3_dat);
 
 	$: [primary_specials, skill_specials, flavor_specials, equipment] = getSpecials(
 		r_dat,
