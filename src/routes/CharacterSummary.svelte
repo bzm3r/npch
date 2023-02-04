@@ -16,21 +16,24 @@
 	$: c2_dat = class2 != '' ? classes.get(class2) : null;
 	$: c3_dat = class3 != '' ? classes.get(class3) : null;
 
-	class Total {
+	class Breakdown {
 		constructor(id) {
 			this.id = id;
 			this.partials = new Map();
-			this.total = 0;
+			this.value = 0;
 		}
 
-		recalculateTotal() {
-			this.total = this.partials.values().reduce((partialSum, x) => partialSum + x.value, 0);
-		}
-
-		add(source, value) {
+		addNumeric(source, value) {
 			if (value > 0) {
 				this.partials.set(source, value);
-				this.total += value;
+				this.value += value;
+			}
+		}
+
+		setSpecial(source, special) {
+			if (special != '') {
+				this.partials.set(source, 'special');
+				this.value = special;
 			}
 		}
 	}
@@ -38,28 +41,36 @@
 	function updateTotals(r_dat, c1_dat, c2_dat, c3_dat) {
 		let totals = new Map();
 		for (const label of all_labels) {
-			totals[label] = new Total(label);
+			totals[label] = new Breakdown(label);
 			if (r_dat != null) {
 				totals[label].add(r_dat.title, r_dat[label]);
 			}
 			if (c1_dat != null) {
 				if (r_dat != null && r_dat.title === 'Human-Academic' && !miscellaneous.includes(label)) {
-					totals[label].add(c1_dat.title, 2 * c1_dat[label]);
+					totals[label].addNumeric(c1_dat.title, 2 * c1_dat[label]);
 				} else {
-					totals[label].add(c1_dat.title, c1_dat[label]);
+					totals[label].addNumeric(c1_dat.title, c1_dat[label]);
 				}
 			}
 			if (c2_dat != null) {
-				totals[label].add(c2_dat.title, c2_dat[label]);
+				totals[label].addNumeric(c2_dat.title, c2_dat[label]);
 			}
 			if (c3_dat != null) {
-				totals[label].add(c3_dat.title, c3_dat[label]);
+				totals[label].addNumeric(c3_dat.title, c3_dat[label]);
 			}
 		}
 		return totals;
 	}
 
 	$: totals = updateTotals(r_dat, c1_dat, c2_dat, c3_dat);
+
+	function createSpecialBreakdowns(source, specials) {
+		return specials.map((special) => {
+			let breakdown = new Breakdown();
+			breakdown.setSpecial(source, special);
+			return breakdown;
+		});
+	}
 
 	function getSpecials(r_dat, c1_dat, c2_dat, c3_dat) {
 		let primary_specials = [];
@@ -68,10 +79,10 @@
 		let equipment = [];
 		[r_dat, c1_dat, c2_dat, c3_dat].forEach((dat) => {
 			if (dat != null) {
-				primary_specials.push(...dat.specials.primary);
-				skill_specials.push(...dat.specials.skill);
-				flavor_specials.push(...dat.specials.flavor);
-				equipment.push(...dat.specials.equipment);
+				primary_specials.push(...createSpecialBreakdowns(dat.title, dat.specials.primary));
+				skill_specials.push(...createSpecialBreakdowns(dat.title, dat.specials.skill));
+				flavor_specials.push(...createSpecialBreakdowns(dat.title, dat.specials.flavor));
+				equipment.push(...createSpecialBreakdowns(dat.title, dat.specials.equipment));
 			}
 		});
 
