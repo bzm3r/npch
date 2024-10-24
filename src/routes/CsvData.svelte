@@ -1,6 +1,6 @@
 <script context="module">
 	export let csv_data = String.raw`title,type,hp,atk,def,init,skl,will,ref,fort,Agility,Dexterity,Strength,Piloting,Stealth,Endurance,Squirm,Biotech,History,People,Places,Engineering,Computers,Medical,People reading,Deceive,Manipulate,Soothe,Command,Persuade,Entertain,Perception,Survival,Research,Craft,Zero-G,Robotic,Charges,Glands,specials_primary,specials_skill,specials_flavor,equipment,images
-Archon,race,25,0,0,-2,1,2,-1,2,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,1,0,0,,,"Robotic;  
+Archon,race,25,0,0,-2,1,2,-1,2,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,1,0,0,,,"Robotic;
 Immune to fear;
 IronHeart;",,
 Fae,race,19,0,1,2,3,-1,2,1,2,2,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,3,2,0,0,2,0,0,0,0,,+3 in 2 social checks; ,, spices (+5 cooking);  something that doesn't belong to you;,
@@ -38,7 +38,7 @@ Jinx,class,0,0,1,1,2,1,1,1,0,0,0,0,0,0,2,2,0,2,0,2,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0
 Liaison,class,1,0,0,0,3,2,0,0,0,0,0,0,0,0,0,0,2,2,2,0,0,0,2,0,0,2,0,2,0,2,0,2,0,0,0,0,0,,,, Exquisite stationery supplies;  an unopenned letter;,
 Macabre,class,0,2,0,1,1,0,3,0,2,0,0,0,2,0,2,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,1,+ATK with knives and unarmed;,,,bone knife,
 Maelstrom,class,1,2,0,0,1,2,0,2,0,0,0,0,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,1,0,+1 ATK elemental damage;,,,emergency nanocapacitor;,
-Martial artist,class,2,1,1,0,0,2,1,1,2,2,2,0,2,2,2,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,2,0,0,0,+2 ATK while unarmed,,,Your hands are 2d4 weapons; ,
+Martial Artist,class,2,1,1,0,0,2,1,1,2,2,2,0,2,2,2,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,2,0,0,0,+2 ATK while unarmed,,,Your hands are 2d4 weapons; ,
 Mender,class,2,0,0,1,1,2,0,2,0,0,0,0,0,0,0,2,0,0,0,2,0,4,0,0,0,2,0,0,0,0,0,0,0,0,0,1,0,,,, medical kit;,
 Paragon,class,1,1,0,0,2,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,, beacon;,
 Pilot,class,0,1,0,2,2,0,2,0,0,2,0,4,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,+1 ATK and DEF when piloting;,,, starcompass;  personal vehicle;,
