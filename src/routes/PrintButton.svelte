@@ -12,7 +12,7 @@
 	import { PDFDocument } from 'pdf-lib';
 
 	async function load_pdf(description) {
-		const res = await fetch(encodeURIComponent('/pdfs/' + description + '.pdf'));
+		const res = await fetch('/pdfs/' + encodeURIComponent(description) + '.pdf');
 		let pdf_buffer = await res.arrayBuffer();
 		let pdf = await PDFDocument.load(pdf_buffer);
 		return pdf;
